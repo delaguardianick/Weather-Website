@@ -38,6 +38,10 @@ $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat=
             'fiveDay' => "https://api.openweathermap.org/data/2.5/forecast?q=" . $cityName . "&appid=" . $apiKey
 );
 
-echo "hiihih";
+if(isset($_GET['type'])){
+    echo callData($_GET['type']);
+}else{
+    echo "FAIL"; 
+}
 ?>
 
