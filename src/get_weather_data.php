@@ -2,7 +2,7 @@
 ini_set('session.cookie_domain','ryerson.ca') ;
 session_start();
 $apiKey = "1433deb5fada830d0ffb2d9f6862d0aa";
-$cityName = $_POST["city"];
+$cityName = 'toronto';
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey;
 
 function callData($url) {
