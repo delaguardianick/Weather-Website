@@ -40,7 +40,7 @@ $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat=
 );
 
 if(isset($_GET['type'])){
-    echo callData($urls[$_GET['type']]);
+    echo ($urls[$_GET['type']]);
 }else{
     echo "FAIL"; 
 }
