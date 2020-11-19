@@ -17,6 +17,7 @@ function callData($url) {
     //curl_close($ch);
     $data = json_decode($response);
     curl_close($ch);
+    return $data;
 }
 
 $data = callData($googleApiUrl);
