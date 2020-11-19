@@ -1,2 +1,2 @@
 <?php
-include('../minute.html');
+readfile('../minute.html');
