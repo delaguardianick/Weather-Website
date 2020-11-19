@@ -39,7 +39,5 @@ $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat=
 );
 
 echo "hiihih";
-
-
 ?>
 
