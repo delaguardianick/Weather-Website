@@ -1,8 +1,11 @@
 <?php
-ini_set('session.cookie_domain','ryerson.ca') ;
-session_start();
 $apiKey = "1433deb5fada830d0ffb2d9f6862d0aa";
-$cityName = 'toronto';
+if(isset($_GET['city'])){
+    $cityName = $_GET['city'];
+}else{
+    $cityName = 'toronto';
+}
+
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey;
 
 function callData($url) {
@@ -40,7 +43,8 @@ $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat=
 );
 
 if(isset($_GET['type'])){
-    echo ($urls[$_GET['type']]);
+    $u = callData($urls[$_GET['type']]);
+    echo json_encode($u);
 }else{
     echo "FAIL"; 
 }
