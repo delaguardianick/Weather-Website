@@ -1,2 +1,2 @@
 <?php
-echo "trial";
+include('../minute.html');
