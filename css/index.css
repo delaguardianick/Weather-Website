@@ -1,13 +1,16 @@
 /* Navbar Css */
-nav #logo {
+* {
+    border-radius: 0 !important;
+  }
+  nav #logo {
     width: 50px;
-    margin-right: 10px;
-}
-
-.dropdown-item:hover {
+    margin-right: 5px;
+  }
+  
+  .dropdown-item:hover {
     background: #457B9D;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
+  }
+  
+  .nav-item{
+    margin: 0 5px;
+  }
