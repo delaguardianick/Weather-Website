@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="">
         <?php include 'template/includes.php';?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@0.1.1"></script>
+        <script src="js/minute.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -20,5 +23,21 @@
         <![endif]-->
         <?php include 'template/navigation.php';?>
         <script src="" async defer></script>
+        <div class="main-content border border-dark mt-4">
+            <div class="city-content ml-2">
+                <h3>City: <span id="citySpan"></span></h3>
+                <h3>As of: <span id="asOf"></span></h3>
+            </div>
+            <div id="dataSection">
+                <div id="info">
+                </div>
+                <div id="graph">
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                </div>
+                <div id="noData" class="hidden">
+                    <h4 class="bg-danger text-white mr-3 ml-3 mt-5 mb-5 text-center">Data not available.</h4>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
