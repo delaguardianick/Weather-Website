@@ -1,67 +1,116 @@
+var APICallType ='current';
+var defaultCity ='Toronto';
+
+
+url = window.location['href'].split('/');
+url = url.slice(0,-1).join('/') + '/src/get_weather_data.php';
+
+
+
+/*
+This function will run when the page first opens up or is reloaded
+*/
 $(function () { 
-    url = window.location['href'].split('/');
-    url = url.slice(0,-1).join('/') + '/src/get_weather_data.php'
+   
     $(document).ready(function () {
         //GET REUQEST TO PHP
 		
+		//Get the session variable named currCity (the current city the user was looking at)
 		currCity =sessionStorage.getItem("currCity");
-		 //sessionStorage.setItem("currCity", "Smith");
-		//var city = document.getElementById('city').value;
+		
+		//If currCity is null or empty (Meaning the user has not searched for a city yet) 
+		// then default to Toronto and get the data
 		if(currCity==="" || currCity===null){
-			$.get(url + '?type=current', function(data, status){
+			getData(APICallType,defaultCity);
 			
-			console.log("Data: " + data + "\nStatus: " + status);
-			
-			//console.log("Data: " + weatherData.main.temp + "\nStatus: " + status);
-			var weatherData = JSON.parse(data);
-			//sessionStorage.setItem("currentWeather",weatherData);
-			
-			sessionStorage.setItem("currCity", weatherData.name);
-			setData(weatherData);
-			});
 		}else{
-			$.get(url + '?type=current&city='+currCity, function(data, status){
-			
-			console.log("Data: " + data + "\nStatus: " + status);
-			
-			//console.log("Data: " + weatherData.main.temp + "\nStatus: " + status);
-			var weatherData = JSON.parse(data);
-			//sessionStorage.setItem("currentWeather",weatherData);
-			
-			sessionStorage.setItem("currCity", weatherData.name);
-			setData(weatherData);
-			});
+			getData(APICallType,currCity);
 			
 		}
     });
 
  });
  
- 
- 
- function searchCity(){
-		var city = document.getElementById('city').value;	
-		//currCity =sessionStorage.getItem("currCity");
-		if(city!=""){
-			$.get(url + '?type=current&city='+city, function(data, status){
-			
-			console.log("Search City " + city);
-			
-			//console.log("Data: " + weatherData.main.temp + "\nStatus: " + status);
-			var weatherData = JSON.parse(data);
-			//sessionStorage.setItem("currentWeather",weatherData);
-			sessionStorage.setItem("currCity", weatherData.name);
-			setData(weatherData);
 
-			});
+
+$("#city").change(function(){
+  searchCity();
+});
+
+/*
+This function will run when a button is pressed to search for a city
+
+Example html code of button (This will probably be the search in the nav bar)
+Make sure text field (input) has a matching ID (ID="city") in this case
+
+	  <label for="city">City Name:</label><br>
+	  <input type="text" id="city" name="city"><br><br>
+	  <button onclick="searchCity()">Search</button>
+	  
+*/
+ function searchCity(){
+		
+		//Get the value in the text field
+		var city = document.getElementById("city").value;
+		console.log("City: "+city);
+		//If the text is not empty
+		if(city!=""){
+			//Get the data for the city in the text field
+			getData(APICallType,city);
+		//If the button is clicked and the input is blank
 		}else{
+			console.log("City: "+city);
 			alert("Please enter a city");
 		}			
 	}
 	
-	
+
+
+/*
+This function will get the json file from php and also call the function to set the inner html of the page
+@param
+type - the type of api call needed e.g. 'current' 'oneCall' ect
+city - the name of the city e.g. 'toronto'
+*/
+ function getData(type,city)
+ {
+	//jQuery to get json data
+	 $.get(url + '?type='+type+'&city='+city, function(data, status){
+			
+			//Parse data so it is readable 
+			var weatherData = JSON.parse(data);
+			//console.log("CITY: "+city);
+			//Check internal codes for errors. 404=invalid city    400=undefined
+			if(weatherData.cod!="404" && weatherData.cod!="400"){
+				
+				//Save the current city name in a session variable
+				sessionStorage.setItem("currCity", weatherData.name);
+				//Set the inner html
+				setData(weatherData);
+			}
+			//If the city was not valid, make an alert
+			else if (weatherData.cod==="404"){
+				alert(city+" is not a valid city");
+			}
+			
+			});
+	 
+ }
+
+
+
+
+/*
+This function will set the html of your page
+@param
+weatherData - the json weather data for the current city
+
+*/	
 function setData(weatherData){
-			var tempValue = weatherData.main.temp;
+	
+	console.log(weatherData);
+	
+	var tempValue = weatherData.main.temp;
 	var nameValue = weatherData.name;
 	var descriptionValue = weatherData.weather[0].description;
 	var iconValue = weatherData.weather[0].icon;
