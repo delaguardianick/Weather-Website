@@ -1,16 +1,102 @@
 /* Navbar Css */
 * {
-    border-radius: 0 !important;
-  }
-  nav #logo {
-    width: 50px;
-    margin-right: 5px;
-  }
+  border-radius: 0 !important;
+  margin:0;
+}
+nav #logo {
+  width: 50px;
+  margin-right: 5px;
+}
+
+.dropdown-item:hover {
+  background: #457B9D;
+}
+
+.nav-item{
+  margin: 0 5px;
+}
+
+
+
+/* Hourly */
+
+#main-container{
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: url(https://savoiragile.com/wp-content/uploads/2015/05/shutterstock_124738093.jpg) no-repeat center center/cover; 
+  width:100%; 
+  height:100vh;
+}
+
+#sub-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  color:black;
+  min-width:90%;
+  height:100%;
+  color:#264672;
+}
+#header-div{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  height:15%;
+  margin-bottom:20px;
+}
+#header-div #hour-form{
+  align-self: flex-end;
+}
+#tableDiv{
+  border:black solid 1px;
+  width:100%;
+  height:75%;
+  overflow:auto;
+}
+#hourly-table{
+  width:100%;
   
-  .dropdown-item:hover {
-    background: #457B9D;
+}
+#hourly-table th{
+  background:#264672;
+  color:white;
+  border:black 1px solid;
+  padding:10px;
+  opacity:1;
+}
+#hourly-table tr{
+  padding:10px;
+}
+
+#hourly-table tr td{
+  border:black 1px solid;
+}
+#hour-bar{
+  width:300px;
+  max-width:300px;
+}
+h1{
+  font-size:2rem;
+}
+#hourly-table tr td:nth-child(even){
+  background:white;
+}
+#hourly-table tr td:nth-child(odd){
+  background:rgb(209, 209, 209);
+}
+.hour-row{
+  padding:5px;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+@media screen and (max-width:600px){
+  #header-div #hour-form{
+      align-self: center;
   }
-  
-  .nav-item{
-    margin: 0 5px;
-  }
+}

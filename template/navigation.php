@@ -39,10 +39,10 @@ echo '
         
       </ul>
     
-    <form class="form-inline">
+    <div class="form-inline">
       <input class="form-control" type="text" placeholder="Search for City"  id ="city"  name = "city">
       <button class="btn btn-primary my-2 my-sm-0" type="submit" onclick="searchCity()"><i class="fa fa-search" ></i></button>
-    </form>
+    </div>
     </div>
     </nav>
 

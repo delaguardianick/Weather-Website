@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,11 +10,16 @@
         <?php include 'template/includes.php';?>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+        <?php include 'template/navigation.php';?>
+        <div id="historicalmain">
+            <div id="sub-container2">
+                <h1>Historical Weather Data for the Previous 5 Days</h1>
+                <div id="day-container">
+                    
+                </div>
+            </div>
+        </div>
         <script src="" async defer></script>
-        to be done by David
+        <script src="js/historical.js"></script>
     </body>
 </html>
