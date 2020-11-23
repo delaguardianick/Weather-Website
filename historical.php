@@ -23,6 +23,7 @@
                 </div>
             </div>
         </div>
+        <?php include 'template/footer.php';?>
         <script src="" async defer></script>
         <script src="js/historica.js"></script>
         <script>
