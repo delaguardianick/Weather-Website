@@ -316,28 +316,30 @@ nav #logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
     width:80%;
     height:35%;
     color:#264672;
   }
-  #terms{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width:100%;
-    height:60%;
-    color:#264672;
+  .termcard{
+    max-width:100%;
+    background:#264672;
+    margin:10px;
+    color:white;
+    text-align:center;
   }
-  .term{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    width:100%;
-    height:100px;
-    background:rgb(211, 209, 209);
-    border:black solid 1px;
-
+  .expanded{
+    color:white;
+    max-width:100%;
+    background:#305891;
+  }
+  .term-accordian{
+    width:90%;
+    
+  }
+  .term-button{
+    color:white;
   }
 
   /* FOOTER */
