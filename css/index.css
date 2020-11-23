@@ -194,6 +194,7 @@ nav #logo {
       font-size:1rem;
   }
 }
+<<<<<<< HEAD
 
 
 /* Current and comparison css*/
@@ -286,6 +287,23 @@ nav #logo {
 }
 
 }
+=======
+  /* Minute Page CSS */
+  .main-content {
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+
+  #graph {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+>>>>>>> development
 
   /* FOOTER */
   .footer {
