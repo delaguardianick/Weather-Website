@@ -154,7 +154,3 @@ function setData(weatherData,cityNum){
 
 }
 
-$('#city').val("");
-$('#city1').val("");
-$('#city2').val("");
-$('#city3').val("");
