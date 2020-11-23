@@ -12,19 +12,19 @@ echo '
             Forecast
           </a>
           <div style="background:#264672;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item text-white" href="#">Current</a>
-            <a class="dropdown-item text-white" href="#">Minutely</a>
-            <a class="dropdown-item text-white" href="#">Hourly</a>
-            <a class="dropdown-item text-white" href="#">Daily</a>
-            <a class="dropdown-item text-white" href="#">Historical</a>
+            <a class="dropdown-item text-white" href="current.php">Current</a>
+            <a class="dropdown-item text-white" href="minute.php">Minutely</a>
+            <a class="dropdown-item text-white" href="hourly.php">Hourly</a>
+            <a class="dropdown-item text-white" href="daily.php">Daily</a>
+            <a class="dropdown-item text-white" href="historical.php">Historical</a>
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</a>
           <div style="background:#264672; " class="  text-white dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item text-white" href="#">About Us</a>
-            <a class="dropdown-item text-white" href="#">Terminology</a>
-            <a class="dropdown-item text-white" href="#">Contact Us</a>
+            <a class="dropdown-item text-white" href="about.php">About Us</a>
+            <a class="dropdown-item text-white" href="term.php">Terminology</a>
+            <a class="dropdown-item text-white" href="contact-us.php">Contact Us</a>
           </div>
         </li>
         <li class="nav-item">
