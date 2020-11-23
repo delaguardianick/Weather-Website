@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,11 +11,54 @@
     <?php include 'template/includes.php';?>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+        <?php include 'template/navigation.php';?>
+        <div id = "main-container" >
+            <div id = "sub-container" class="container bg-light">
+                <div id="header-div">
+                    <h1>Hourly Forecast</h1>
+                    <form id="hour-form" class="form-inline">
+                        <input class="form-control" type="text" placeholder="Filter By Time (e.g 11:00:00 PM, AM)"  id ="hour-bar"  name = "hour-bar">
+                    </form>
+                </div>
+                <div id="tableDiv" class="table-wrapper-scroll-y my-custom-scrollbar"  class="table">
+                    <table id = "hourly-table">
+                        <thead>
+                            <tr id="heading">
+                                <th>Date/Time</th>
+                                <th>Icon</th>
+                                <th>Temp</th>
+                                <th>Feels Like</th>
+                                <th>Description</th>
+                                <th>Precipitation</th>
+                                <th>Wind Speed</th>
+                                <th>Wind Gust</th>
+                                <th>Wind Degrees</th>
+                                <th>Cloudiness</th>
+                                <th>Visibility</th>
+                                <th>Pressure</th>
+                                <th>Humidity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <script src="" async defer></script>
-        to be done by David
+        <script src="js/hourly.js"></script>
+        <script>
+            $('#hour-bar').keyup(function(){
+                var val=$(this).val();    
+                    $('#hourly-table tbody tr').hide();
+                    var trs=$('table tbody tr').filter(function(index,d){
+
+                    return $(d).find("td:first").text().toUpperCase().indexOf(val)!=-1 || $(d).find("td:last").text().toUpperCase().indexOf(val)!=-1;
+                    });
+                    console.log(trs);
+                    trs.show();   
+            });
+        </script>
     </body>
 </html>
