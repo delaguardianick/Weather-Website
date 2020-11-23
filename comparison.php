@@ -6,7 +6,7 @@
         <title>City Comparison</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/andrew.css">
+        <link rel="stylesheet" href="css/index.css">
         <?php include 'template/includes.php';?>
 		<?php include 'template/navigation.php';?>
     </head>
@@ -57,6 +57,9 @@
 				<li class="list-group-item current-list-item card-list"><h3 id ="humidity1"></h3></li>
 			</ul>
 			</div>
+			<div class="card-footer">
+			<small class="text-muted" id="time1"></small>
+			</div>
 		</div>
 
 
@@ -82,6 +85,9 @@
 				<li class="list-group-item current-list-item card-list"><h3 id ="humidity2">-</h3></li>
 			</ul>
 			</div>
+			<div class="card-footer">
+			<small class="text-muted" id="time2"></small>
+			</div>
 		</div>		
 				
 						<!--City 3 card-->
@@ -106,12 +112,15 @@
 				<li class="list-group-item current-list-item card-list"><h3 id ="humidity3">-</h3></li>
 			</ul>
 			</div>
+			<div class="card-footer">
+			<small class="text-muted" id="time3"></small>
+			</div>
 		</div>
 		</div>
 
 	</div>
 </div>
-	
-<script src="js/comparison.js"></script>		
+		<?php include 'template/footer.php';?>	
+<script src="js/comparison1.js"></script>		
     </body>
 </html>

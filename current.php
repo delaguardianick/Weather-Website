@@ -6,7 +6,7 @@
         <title>Current Weather Data</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/andrew.css">
+        <link rel="stylesheet" href="css/index.css">
 		
         <?php include 'template/includes.php';?>
     </head>
@@ -17,22 +17,7 @@
  <?php include 'template/navigation.php';?>
 		
 		
-<!--Search Bar
-<div class="input"  style="float:right;">
 
-	  <label for="city">City Name:</label><br>
-	  <input type="text" id="city" name="city"><br><br>
-	  <button onclick="searchCity()">Search</button>
-
-</div> -->
-
-<!--Current Weather card 
-
-<div id="header-div">
-		<h6 class="title d-flex justify-content-center">Current Weather</h6>
-	</div>
-
--->
 <div id="main-container-c">
 	
 	<div id="sub-container" class="container bg-light">
@@ -90,11 +75,12 @@
 			</div>
 
 		</div>	
-					<div class="card-footer">
+			<div class="card-footer">
 			<small class="text-muted" id="time"></small>
 			</div>
 	</div>	
 </div>	
+		<?php include 'template/footer.php';?>	
     <script src="js/current1.js"></script>
  <!--    <script src="js/template.js"></script> -->
     </body>
