@@ -100,12 +100,7 @@
 		</div>
 	</div>
 </div>
-
-
-
-
 	
-		
 <script src="js/comparison.js"></script>		
     </body>
 </html>

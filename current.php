@@ -54,6 +54,7 @@
 					<li class="list-group-item current-list-item card-list " id ="temp"></li>
 					<li class="list-group-item current-list-item card-list " id="feels_like"></li>
 					<li class="list-group-item current-list-item card-list " id="humidity"></li>
+					<li class="list-group-item current-list-item card-list " id="time">REEE</li>
 					
 					<!--<li class="list-group-item current-list-item card-list" id="sunrise"></li>
 					<li class="list-group-item current-list-item card-list" id="sunset"></li>
@@ -70,19 +71,19 @@
 			<div class="card" id="card">
 			
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item current-list-item card-list" id="sunrise">Sunrise: <?php echo date("H:i:s A", ($currentWeather->main->sunrise)); ?> UTC </li>
-					<li class="list-group-item current-list-item card-list" id="sunset">Sunset:  <?php echo date("H:i:s A",($currentWeather->main->sunset)); ?> UTC</li>
-					<li class="list-group-item current-list-item card-list" id="cloudCoverage">Cloud Coverage: <?php echo $currentWeather->main->clouds; ?>%  </li>
-					<li class="list-group-item current-list-item card-list" id="visibility">Visibility: <?php echo ($currentWeather->main->visibility)/1000; ?>km </li>
-					<li class="list-group-item current-list-item card-list" id="wind_speed">Wind Speed: <?php echo $currentWeather->main->wind_speed; ?>m/s  </li>
-					<li class="list-group-item current-list-item card-list" id="wind_degree">Wind Degree: <?php echo $currentWeather->main->wind_deg; ?>° </li>
+					<li class="list-group-item current-list-item card-list" id="sunrise"></li>
+					<li class="list-group-item current-list-item card-list" id="sunset"></li>
+					<li class="list-group-item current-list-item card-list" id="cloudCoverage"></li>
+					<li class="list-group-item current-list-item card-list" id="visibility"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_speed"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_degree"></li>
 
 				</ul>	
 			</div>		
 		</div>	
 	</div>	
 </div>	
-    <script src="js/currentWeather.js"></script>
+    <script src="js/current.js"></script>
  <!--    <script src="js/template.js"></script> -->
     </body>
 </html>
