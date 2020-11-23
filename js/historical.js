@@ -8,7 +8,7 @@ var defaultCity ='Toronto';
 //URL of php file that calls API
 url = window.location['href'].split('/');
 url = url.slice(0,-1).join('/') + '/src/get_weather_data.php';
-
+var count = 1 ;
 
 
 /*
@@ -36,6 +36,10 @@ $(function () {
 
  });
  
+function containerEmpty(){
+	$("#day-container").empty();
+	count = 1;
+}
 
 /*
 This function will run when a button is pressed to search for a city
@@ -102,11 +106,9 @@ city - the name of the city e.g. 'toronto'
 
 function sortDiv(){
 	console.log("here");
-	var $wrapper = $('#day-container');
-    $wrapper.find('.historical-standard').sort(function (a, b) {
-    return +b.dataset.day - a.dataset.day;
-	})
-	.appendTo( $wrapper );
+	$('#day-container .historical-standard').sort(function(a, b) {
+    return $(b).data('day') - $(a).data('day');
+  }).appendTo('#day-container');
 
 }
 
@@ -123,6 +125,7 @@ function getDataHistorical(type,city,dt){
 				//Save the current city name in a session variable
 				sessionStorage.setItem("currCity", city);
 				//Set the inner html
+				count++;
 				setData(weatherData);
 			}
 			//If the city was not valid, make an alert
@@ -133,7 +136,7 @@ function getDataHistorical(type,city,dt){
       });
       dt = dt-day;
 	}
-	sortDiv();
+	
 }
 function valueCheck(value){
   if (typeof value == "undefined"){
@@ -148,13 +151,11 @@ This function will set the html of your page
 weatherData - the json weather data for the current city
 
 */	
-var count =5;
-function containerEmpty(){
-	$("#day-container").empty();
-	count = 5;
-}
+
+
 function setData(weatherData){
 	console.log(weatherData);
+	console.log(count);
 	var offset = weatherData.timezone_offset;
 	var item =weatherData.current;
 	var UnixTimeStamp = item.dt + offset;
@@ -162,7 +163,7 @@ function setData(weatherData){
 	var dateObject = new Date(milliseconds);
 	var humanDateFormat = dateObject.toLocaleString();
 	$('#day-container').append(`
-		<div class="historical-standard" data-day=`+count+`>
+		<div class="historical-standard" data-day="`+dateObject.toLocaleString("en-US", {day: "numeric"})+`">
 				<p class="date-heading">`+humanDateFormat+`</p>
 				<img class="iconimg" src="http://openweathermap.org/img/wn/`+item.weather[0].icon+`.png"/>
 				<p class="historical-info"><b>Temp:</b> `+valueCheck(item.temp)+`</p>
@@ -183,6 +184,10 @@ function setData(weatherData){
 				</div>
 			</div>
 	`);
-	count--;
+	if ($(".historical-standard").length===5){
+		console.log('p');
+		sortDiv();
+	}
 }
+
 
