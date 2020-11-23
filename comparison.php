@@ -16,88 +16,99 @@
 
 
 
-<div id="main-container" class="overflow-auto">
+<div id="main-container-c" >
 	
 	<div id="sub-container" class="container bg-light ">
-		<!--City 1 card-->
-		<div id="header-div">
+		
+		
+		
+		
+		
+		
+		<div class="page-title">
 			<h1 class="title d-flex justify-content-center">City Comparison</h1>
 		</div>
-		<div class="card-deck">
-		<div class="card center">
+		
+		
+		
+		<!--City 1 card-->
+		
 
-			<div class="input" method="post">
+		<div class=" card-columns card-main-comp ">
+		
+		<div class="card">
+
+			<div class="form-inline" method="post">
 				  
-				  <input class="inline" type="text" id="city1" name="city1" placeholder="Search for a city" >
-				  <button class="inline" onclick="searchCity('1')">Search</button>
+				  <input class="inline form-control" type="text" id="city1" name="city1" placeholder="Search for a city" >
+				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('1')"><i class="fa fa-search"></i></button>
 
 			</div>
 
 			<div class ="card-body">
 				<h2 class = "card-title city-title" id="name1"></h2>
-				<h3 class="card-subtitle mb-2 text-muted city-title" id="desc1"></h3>
+				<h2 class="card-subtitle mb-2 text-muted city-title" id="desc1"></h2>
 				<img class="weather-icon" id="icon1" src=""  alt="Card image cap">
 			</div>	
 			<div style="clear:left;">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item current-list-item card-list" id="temp1"></li>
-				<li class="list-group-item current-list-item card-list" id="feels_like1"></li>
-				<li class="list-group-item current-list-item card-list" id ="humidity1"></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="temp1"></h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="feels_like1"></h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="humidity1"></h3></li>
 			</ul>
 			</div>
 		</div>
 
 
 				<!--City 2 card-->
-		<div class="card center">
+		<div class="card ">
 
-			<div class="input" method="post">
+			<div class="form-inline" method="post">
 				  
-				 
-				  <input class="inline" type="text" id="city2" name="city2" placeholder="Search for a city">
-				  <button class="inline" onclick="searchCity('2')">Search</button>
+				  <input class="inline form-control" type="text" id="city2" name="city2" placeholder="Search for a city" >
+				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('2')"><i class="fa fa-search"></i></button>
 
 			</div>
 
 			<div class ="card-body">
 				<h2 class = "card-title city-title" id="name2">-</h2>
-				<h3 class="card-subtitle mb-2 text-muted city-title " id="desc2">-</h3>
+				<h2 class="card-subtitle mb-2 text-muted city-title " id="desc2">-</h2>
 				<img class="weather-icon" class="inline"  id="icon2" src="http://2.bp.blogspot.com/-UIjLsu00T6w/UZhz5NuKjnI/AAAAAAAADYw/z6zyAVj_nG4/s1600/white-square-872x844.jpg"   alt="Card image cap">
 			</div>	
 			<div style="clear:left;">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item current-list-item card-list" id="temp2">-</li>
-				<li class="list-group-item current-list-item card-list" id="feels_like2">-</li>
-				<li class="list-group-item current-list-item card-list" id ="humidity2">-</li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="temp2">-</h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="feels_like2">-</h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="humidity2">-</h3></li>
 			</ul>
 			</div>
 		</div>		
 				
 						<!--City 3 card-->
-		<div class="card center">
+		<div class="card ">
 
-			<div class="input" method="post">
+			<div class="form-inline" method="post">
 				  
-				  
-				  <input class="inline" type="text" id="city3" name="city3" placeholder="Search for a city">
-				  <button class="inline" onclick="searchCity('3')">Search</button>
+				  <input class="inline form-control" type="text" id="city3" name="city3" placeholder="Search for a city" >
+				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('3')"><i class="fa fa-search"></i></button>
 
 			</div>
 
 			<div class ="card-body">
 				<h2 class = "card-title city-title" id="name3">-</h2>
-				<h3 class="card-subtitle mb-2 text-muted city-title" id="desc3" >-</h3>
+				<h2 class="card-subtitle mb-2 text-muted city-title" id="desc3" >-</h2>
 				<img class="weather-icon" id="icon3" src="http://2.bp.blogspot.com/-UIjLsu00T6w/UZhz5NuKjnI/AAAAAAAADYw/z6zyAVj_nG4/s1600/white-square-872x844.jpg" alt="Card image cap">
 			</div>	
 			<div style="clear:left;">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item current-list-item card-list" id="temp3">-</li>
-				<li class="list-group-item current-list-item card-list" id="feels_like3">-</li>
-				<li class="list-group-item current-list-item card-list" id ="humidity3">-</li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="temp3">-</h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="feels_like3">-</h3></li>
+				<li class="list-group-item current-list-item card-list"><h3 id ="humidity3">-</h3></li>
 			</ul>
 			</div>
 		</div>
 		</div>
+
 	</div>
 </div>
 	

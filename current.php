@@ -33,57 +33,69 @@
 	</div>
 
 -->
-<div id="main-container">
+<div id="main-container-c">
 	
 	<div id="sub-container" class="container bg-light">
-		<div id="header-div">
+		<div class="page-title">
 			<h1 class="title d-flex justify-content-center">Current Weather</h1>
 		</div>
-		<div class="card-deck">
-			<div class="card " id="card">
-				<div class ="card-body">
-					<h2 class = "card-title city-title" id="name"></h2>
-					
-					
-					<h2 class="card-subtitle mb-2 text-muted city-title" id="description" ></h2>
-					<img id="icon" src="" width="auto;" height="auto" alt="Card image cap" >
-					
-				</div>	
-				<div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item current-list-item card-list " id ="temp"></li>
-					<li class="list-group-item current-list-item card-list " id="feels_like"></li>
-					<li class="list-group-item current-list-item card-list " id="humidity"></li>
-					<li class="list-group-item current-list-item card-list " id="time">REEE</li>
-					
-					<!--<li class="list-group-item current-list-item card-list" id="sunrise"></li>
-					<li class="list-group-item current-list-item card-list" id="sunset"></li>
-					<li class="list-group-item current-list-item card-list" id="cloudCoverage"></li>
-					<li class="list-group-item current-list-item card-list" id="visibility"></li>
-					<li class="list-group-item current-list-item card-list" id="wind_speed"></li>
-					<li class="list-group-item current-list-item card-list" id="wind_degree"></li>
-
-				</ul>-->
+		
+		<div class="card-columns card-main">
+			
+			
+			<div class="weather-main">
+			<!-- Current Weather card -->
+				<div class="card " >
+					<div class ="card-body">
+						<h2 class = "card-title city-title" id="name"></h2>
+						
+						
+						<h2 class="card-subtitle mb-2 text-muted city-title" id="description" ></h2>
+						<img id="icon" src="" width="auto;" height="auto" alt="Card image cap" >
+						
+					</div>	
+					<div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item current-list-item main-weather-item "><h3 id ="temp"></h3></li>
+						<li class="list-group-item current-list-item main-weather-item "><h3 id="feels_like"></h3></li>
+						<li class="list-group-item current-list-item main-weather-item "><h3 id="humidity"></h3></li>
+					</div>
 				</div>
-
-			</div>
+				<!-- Current Weather card -->	
+				<div class="card p-3">
+					 <div class="card-body">
+					  <h5 class="card-title">Dress For The Weather!</h5>
+					  <p class="card-text" id="dress-recommend"></p>
+					 </div>
+				</div>				
+			</div>		
 				
-			<div class="card" id="card">
+				
+				
+			<!-- Details Weather card -->	
+			<div class="card">
 			
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item current-list-item card-list" id="sunrise"></li>
-					<li class="list-group-item current-list-item card-list" id="sunset"></li>
-					<li class="list-group-item current-list-item card-list" id="cloudCoverage"></li>
-					<li class="list-group-item current-list-item card-list" id="visibility"></li>
-					<li class="list-group-item current-list-item card-list" id="wind_speed"></li>
-					<li class="list-group-item current-list-item card-list" id="wind_degree"></li>
-
+					<li class="list-group-item current-list-item detail-weather-item"><p id="sunrise" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="sunset" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="cloudCoverage" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="visibility" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-itemt"><p id="wind_speed" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="wind_degree" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="uvi" class="current-details"></p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="pressure" class="current-details"></p></li>
+					
 				</ul>	
-			</div>		
+				
+			</div>
+
 		</div>	
+					<div class="card-footer">
+			<small class="text-muted" id="time"></small>
+			</div>
 	</div>	
 </div>	
-    <script src="js/current.js"></script>
+    <script src="js/current1.js"></script>
  <!--    <script src="js/template.js"></script> -->
     </body>
 </html>
