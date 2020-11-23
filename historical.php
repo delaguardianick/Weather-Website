@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,12 +9,35 @@
         <link rel="stylesheet" href="">
         <?php include 'template/includes.php';?>
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+    <body id="historical-body">
+        <?php include 'template/navigation.php';?>
+        <div id="historicalmain">
+            <div id="sub-container2">
+                <div id="historical-header">
+                    <h1>Historical Weather Data for the Past 5 Days</h1>
+                </div>
+                <div id="scrollableContainer">
+                    <div id="day-container">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="" async defer></script>
-        to be done by David
+        <script src="js/historica.js"></script>
+        <script>
+            function MoreInfoToggle() {
+                var x=document.getElementsByClassName('collapsebtn');
+                for(var i = 0; i < x.length; i++){
+                    if (x[i].innerText ==="More Info"){
+                        x[i].innerText = "Less Info";
+                    } 
+                    else{
+                        x[i].innerText = "More Info";
+                    }
+                }
+               
+            }
+        </script>
     </body>
 </html>
