@@ -24,7 +24,7 @@
             </div>
         </div>
         <script src="" async defer></script>
-        <script src="js/historica.js"></script>
+        <script src="js/historical.js"></script>
         <script>
             function MoreInfoToggle() {
                 var x=document.getElementsByClassName('collapsebtn');
