@@ -79,7 +79,7 @@ nav #logo {
   width:300px;
   max-width:300px;
 }
-h1{
+#header-div h1{
   font-size:2rem;
 }
 #hourly-table tr td:nth-child(even){
@@ -98,5 +98,99 @@ h1{
 @media screen and (max-width:600px){
   #header-div #hour-form{
       align-self: center;
+  }
+}
+
+/* Historical */
+#historical-body{
+  background:url(https://savoiragile.com/wp-content/uploads/2015/05/shutterstock_124738093.jpg) no-repeat center center/cover;
+  height:150vh;
+}
+#historicalmain{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width:100%;
+  margin-top:10px;
+}
+#historical-header{
+  width:100%;
+  height:20%;
+  text-align: center;
+  margin:15px;
+}
+#historical-header h1{
+  font-size: 1.8rem;
+}
+#sub-container2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width:95%;
+  max-width:95%;
+  min-height:300px;
+  background:#264672;
+  color:white;
+  border-radius: 2% !important;
+  margin:25px;
+  text-align: center;
+}
+
+#scrollableContainer{
+  width:100%;
+  height:85%;
+  overflow-x:scroll;
+}
+
+#day-container{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width:1250px;
+  height:85%;
+  padding:15px;
+  color:#264672;
+  
+}
+
+.historical-standard{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width:230px;
+  background:white;
+  border-radius:3% !important;
+}
+.MoreInfo{
+  width:95%;
+
+}
+.date-heading{
+  font-size:1.25rem;
+}
+.historical-info{
+  font-size:1.2rem;
+}
+.iconimg{
+  background:#264672;;
+  padding:15px;
+  border-radius: 100% !important;
+}
+@media screen and (max-width:600px){
+  #historical-header h1{
+      font-size:1.25rem;
+  }
+  .historical-standard{
+      margin-left:15px;
+      margin-right:15px;
+  }
+  .date-heading{
+      font-size:1.15rem;
+  }
+  .historical-info{
+      font-size:1rem;
   }
 }

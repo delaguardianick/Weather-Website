@@ -34,7 +34,7 @@ $latValue = $data->coord->lat;
 
 $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat='. $latValue .'&lon=' . $lonValue . '&appid=1433deb5fada830d0ffb2d9f6862d0aa&units=metric',
             'current' => "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey,
-            'historical' => "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=". $latValue . "&lon=" . $lonValue . "&dt=" . $dt . "&appid=" . $apiKey,
+            'historical' => "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=". $latValue . "&lon=" . $lonValue . "&dt=" . $dt . "&appid=" . $apiKey . "&units=metric",
             'fiveDay' => "https://api.openweathermap.org/data/2.5/forecast?q=" . $cityName . "&appid=" . $apiKey
 );
 

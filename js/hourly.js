@@ -125,7 +125,7 @@ function setData(weatherData){
     $('#hourly-table tbody').append(`
         <tr class="hour-row">
           <td>`+dateObject.toLocaleString()+`</td>
-          <td><img src="http://openweathermap.org/img/w/`+item.weather[0].icon+`.png"</td>
+          <td><img src="http://openweathermap.org/img/w/`+item.weather[0].icon+`.png"/></td>
           <td>`+item.temp+`</td>
           <td>`+item.feels_like+`</td>
           <td>`+item.weather[0].description+`</td>
