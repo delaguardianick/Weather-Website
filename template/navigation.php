@@ -28,13 +28,13 @@ echo '
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Alerts</a>
+          <a class="nav-link text-white" href="alerts.php">Alerts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Playlists</a>
+          <a class="nav-link text-white" href="spotify.php">Playlists</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">City Comparison</a>
+          <a class="nav-link text-white" href="comparison.php">City Comparison</a>
         </li>
         
       </ul>
