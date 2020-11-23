@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Daily Data</title>
+        <title>Terminology</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -37,11 +37,11 @@
             <div class="term">
               <h4 class="term-name">Humidity</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample2">
                 <div class="card card-body">
                   The state of the air when it is full of water vapor.
                 </div>
@@ -50,11 +50,11 @@
             <div class="term">
               <h4 class="term-name">Pressure</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample">
                 <div class="card card-body">
                   The force exerted on a surface by the air above it as gravity pulls it to Earth. Measured in kPa.
                 </div>
@@ -63,11 +63,11 @@
             <div class="term">
               <h4 class="term-name">UV Index (UV)</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample3">
                 <div class="card card-body">
                   The amount of skin-damaging UV radiation reaching the earth's surface.
                 </div>
@@ -76,11 +76,11 @@
             <div class="term">
               <h4 class="term-name">Visibility</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample4">
                 <div class="card card-body">
                   The measure of distance at which an object or light could be recognized.
                 </div>
@@ -89,11 +89,11 @@
             <div class="term">
               <h4 class="term-name">Wind Speed</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample5">
                 <div class="card card-body">
                   The measure of how fast air is moving at a certain point of time.
                 </div>
@@ -102,11 +102,11 @@
             <div class="term">
               <h4 class="term-name">Wind Gust</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample6">
                 <div class="card card-body">
                   The measure of the sudden increase in wind speed.
                 </div>
@@ -115,11 +115,11 @@
             <div class="term">
               <h4 class="term-name">Wind Degree</h4>
               <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">
                   Definition
                 </a>
               </p>
-              <div class="collapse" id="collapseExample1">
+              <div class="collapse" id="collapseExample7">
                 <div class="card card-body">
                   The direction of which air is moving.
                 </div>

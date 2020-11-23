@@ -301,6 +301,44 @@ nav #logo {
   .hidden {
     display: none !important;
   }
+  /*Term Page */
+
+  #term-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    background:white;
+    color:#264672;
+  }
+  #term-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    height:35%;
+    color:#264672;
+  }
+  #terms{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%;
+    height:60%;
+    color:#264672;
+  }
+  .term{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height:100px;
+    background:rgb(211, 209, 209);
+    border:black solid 1px;
+
+  }
 
   /* FOOTER */
   .footer {
