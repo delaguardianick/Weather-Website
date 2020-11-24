@@ -194,7 +194,15 @@ nav #logo {
       font-size:1rem;
   }
 }
-<<<<<<< HEAD
+/*ABOUT US*/
+.abt-box{
+  transition: box-shadow .3s;
+  font-size: larger;
+}
+
+.abt-box:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
 
 
 /* Current and comparison css*/
@@ -287,7 +295,6 @@ nav #logo {
 }
 
 }
-=======
   /* Minute Page CSS */
   .main-content {
     width: 70%;
@@ -303,7 +310,6 @@ nav #logo {
   .hidden {
     display: none !important;
   }
->>>>>>> development
 
   /* FOOTER */
   .footer {
