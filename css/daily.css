@@ -1,0 +1,9 @@
+.carousel, .carousel-item .card{
+    width: 90em; 
+    height: 30em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    /* width: 70%; */
+    }

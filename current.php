@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -10,15 +6,84 @@
         <title>Current Weather Data</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/andrew.css">
+		
         <?php include 'template/includes.php';?>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-        this current page to be done by Andrew
+    <script src="" async defer></script>
+	
+
+ <?php include 'template/navigation.php';?>
+		
+		
+<!--Search Bar
+<div class="input"  style="float:right;">
+
+	  <label for="city">City Name:</label><br>
+	  <input type="text" id="city" name="city"><br><br>
+	  <button onclick="searchCity()">Search</button>
+
+</div> -->
+
+<!--Current Weather card 
+
+<div id="header-div">
+		<h6 class="title d-flex justify-content-center">Current Weather</h6>
+	</div>
+
+-->
+<div id="main-container">
+	
+	<div id="sub-container" class="container bg-light">
+		<div id="header-div">
+			<h1 class="title d-flex justify-content-center">Current Weather</h1>
+		</div>
+		<div class="card-deck">
+			<div class="card " id="card">
+				<div class ="card-body">
+					<h2 class = "card-title city-title" id="name"></h2>
+					
+					
+					<h2 class="card-subtitle mb-2 text-muted city-title" id="description" ></h2>
+					<img id="icon" src="" width="auto;" height="auto" alt="Card image cap" >
+					
+				</div>	
+				<div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item current-list-item card-list " id ="temp"></li>
+					<li class="list-group-item current-list-item card-list " id="feels_like"></li>
+					<li class="list-group-item current-list-item card-list " id="humidity"></li>
+					<li class="list-group-item current-list-item card-list " id="time">REEE</li>
+					
+					<!--<li class="list-group-item current-list-item card-list" id="sunrise"></li>
+					<li class="list-group-item current-list-item card-list" id="sunset"></li>
+					<li class="list-group-item current-list-item card-list" id="cloudCoverage"></li>
+					<li class="list-group-item current-list-item card-list" id="visibility"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_speed"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_degree"></li>
+
+				</ul>-->
+				</div>
+
+			</div>
+				
+			<div class="card" id="card">
+			
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item current-list-item card-list" id="sunrise"></li>
+					<li class="list-group-item current-list-item card-list" id="sunset"></li>
+					<li class="list-group-item current-list-item card-list" id="cloudCoverage"></li>
+					<li class="list-group-item current-list-item card-list" id="visibility"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_speed"></li>
+					<li class="list-group-item current-list-item card-list" id="wind_degree"></li>
+
+				</ul>	
+			</div>		
+		</div>	
+	</div>	
+</div>	
+    <script src="js/current.js"></script>
+ <!--    <script src="js/template.js"></script> -->
     </body>
 </html>
