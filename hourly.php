@@ -46,6 +46,7 @@
                 </div>
             </div>
         </div>
+        <?php include 'template/footer.php';?>
         <script src="" async defer></script>
         <script src="js/hourly.js"></script>
         <script>
