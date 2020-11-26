@@ -19,7 +19,7 @@
         <![endif]-->
         <?php include 'template/navigation.php';?>
         <script src="" async defer></script>
-        <div class="main-content border border-dark mt-4">
+        <div class="main-content mt-4">
             <div class="header text-center">
                 <h2>About Us</h2>
             </div>
