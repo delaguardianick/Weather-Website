@@ -20,7 +20,9 @@ nav, .dropdown-menu, .search-btn{
 .nav-item{
   margin: 0 5px;
 }
-
+body{
+  background: #EBFBFF;
+}
 
 
 /* Hourly */
@@ -103,20 +105,15 @@ nav, .dropdown-menu, .search-btn{
   }
 }
 
-/* Historical */
-#historical-body{
-  background:url(https://savoiragile.com/wp-content/uploads/2015/05/shutterstock_124738093.jpg) no-repeat center center/cover;
-  height:150vh;
-}
 #historicalmain{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  /* display: flex;
+  align-items: flex-start; */
   width:100%;
   margin-top:10px;
+  padding-bottom: 6.5em;
+  overflow-x: hidden;
 }
 #historical-header{
-  width:100%;
   height:20%;
   text-align: center;
   margin:15px;
@@ -127,13 +124,11 @@ nav, .dropdown-menu, .search-btn{
 #sub-container2{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   text-align: center;
-  width:95%;
-  max-width:95%;
   min-height:300px;
-  background:#264672;
+  width: 97%;
+  background:#174CA1;
   color:white;
   border-radius: 2% !important;
   margin:25px;
@@ -142,28 +137,25 @@ nav, .dropdown-menu, .search-btn{
 
 #scrollableContainer{
   width:100%;
-  height:85%;
-  overflow-x:scroll;
 }
 
 #day-container{
   display:flex;
-  justify-content: space-around;
   align-items: center;
-  width:1250px;
+  width:100%;
   height:85%;
   padding:15px;
-  color:#264672;
+  color:#1D1F20;
   
 }
 
 .historical-standard{
+  width: 20%;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width:230px;
-  background:white;
+  background: #EBFBFF;
   border-radius:3% !important;
 }
 .MoreInfo{
@@ -172,34 +164,63 @@ nav, .dropdown-menu, .search-btn{
 }
 .date-heading{
   font-size:1.25rem;
+  margin-top: 2%;
 }
 .historical-info{
   font-size:1.2rem;
 }
+.historical-info button{
+  background-color: #7C7BE0;
+  border-color: #7C7BE0;
+}
 .iconimg{
-  background:#264672;;
-  padding:15px;
+  background:#EBFBFF;
   border-radius: 100% !important;
 }
+ .historical-standard {
+   margin-left: 1%;
+   margin-right: 1%;
+ }
 @media screen and (max-width:600px){
+  #historicalmain{
+    /* overflow-x:scroll; */
+    width: unset !important;
+  }
+  #scrollableContainer{
+    width: unset !important;
+  }
+  #sub-container2{
+    display: inline-grid !important;
+    overflow-x: scroll;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
   #historical-header h1{
-      font-size:1.25rem;
+      font-size:medium;
   }
   .historical-standard{
-      margin-left:15px;
-      margin-right:15px;
+      margin-left:1%;
+      margin-right: 1%;
+      width: 10em !important;
   }
   .date-heading{
-      font-size:1.15rem;
+      font-size:smaller;
   }
   .historical-info{
-      font-size:1rem;
+      font-size:smaller;
+  }
+  .historical-info button {
+    background-color: #7C7BE0;
+    border-color: #7C7BE0;
   }
 }
 /*ABOUT US*/
 .abt-box{
-  transition: box-shadow .3s;
   font-size: larger;
+}
+.abt-box{
+  transition: box-shadow .3s;
 }
 
 .abt-box:hover {
@@ -328,7 +349,7 @@ nav, .dropdown-menu, .search-btn{
     justify-content: space-around;
     align-items: center;
     width:100%;
-    background:white;
+    background: #EBFBFF;
     color:#264672;
   }
   #term-info{
@@ -339,19 +360,19 @@ nav, .dropdown-menu, .search-btn{
     text-align: center;
     width:80%;
     height:35%;
-    color:#264672;
+    color:#1D1F20;
   }
   .termcard{
     max-width:100%;
-    background:#264672;
+    background:#1D1F20;
     margin:10px;
-    color:white;
+    color: #EBFBFF;
     text-align:center;
   }
   .expanded{
-    color:white;
+    color: #EBFBFF;
     max-width:100%;
-    background:#305891;
+    background:#174CA1;
   }
   .term-accordian{
     width:90%;

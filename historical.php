@@ -12,10 +12,10 @@
     <body id="historical-body">
         <?php include 'template/navigation.php';?>
         <div id="historicalmain">
-            <div id="sub-container2">
-                <div id="historical-header">
+            <div id="historical-header">
                     <h1>Historical Weather Data for the Past 5 Days</h1>
                 </div>
+            <div id="sub-container2">
                 <div id="scrollableContainer">
                     <div id="day-container">
                         
@@ -23,6 +23,7 @@
                 </div>
             </div>
         </div>
+        <?php include 'template/footer.php';?>
         <script src="" async defer></script>
         <script src="js/historica.js"></script>
         <script>
