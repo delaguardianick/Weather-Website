@@ -321,6 +321,46 @@ nav, .dropdown-menu, .search-btn{
     color: #E63946 !important;
   }
 
+  /*TERMINOLOGY*/
+  #term-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    background:white;
+    color:#264672;
+  }
+  #term-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width:80%;
+    height:35%;
+    color:#264672;
+  }
+  .termcard{
+    max-width:100%;
+    background:#264672;
+    margin:10px;
+    color:white;
+    text-align:center;
+  }
+  .expanded{
+    color:white;
+    max-width:100%;
+    background:#305891;
+  }
+  .term-accordian{
+    width:90%;
+    
+  }
+  .term-button{
+    color:white;
+  }
+
   /* FOOTER */
   body{
     min-height: 100vh;
