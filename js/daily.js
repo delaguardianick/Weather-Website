@@ -128,6 +128,7 @@ function setData(weatherData){
 		
 		var wind_speed = item.wind_speed;
 		var wind_deg= item.wind_deg;
+		
 		var pressure= item.pressure;
 		   
 		var tempDay = item.temp.day;
@@ -141,15 +142,15 @@ function setData(weatherData){
 
 		var dressValue;
 		if(tempDay >25){
-			dressValue="Currently warm. Light clothing recommended ";
+			dressValue="Currently warm. Light clothing recommended. ";
 		}else if(tempDay >15){
-			dressValue="It's a cool day, maybe a sweater recommended ";
+			dressValue="It's a cool day. Sweater recommended. ";
 		}else if(tempDay >10){
-			dressValue="Chilly outside. Minimal outerwear ";
-		}else if(tempDay >5){
-			dressValue="It's a cold day. Puffer coats or down jackets with a beanie";
+			dressValue="Chilly outside. Minimal outerwear recommeded.";
+		}else if(tempDay >0){
+			dressValue="It's a cold day. Jacket with a beanie recommeded.";
 		}else if(tempDay <=0){
-			dressValue="Freezing temperatures. Double-layered and hooded down jackets";
+			dressValue="Freezing temperatures. Double-layered down jackets recommeded.";
 		}else{
 			dressValue ="";
 		}
@@ -158,13 +159,12 @@ function setData(weatherData){
 		<li data-target="#carouselExampleIndicators" data-slide-to="`+ index +`" `+ (index == 0 ? 'class="active"' : '') +`></li>
 		`)
 
-		console.log("before append");
 		$(".carousel-inner").append(`<div class="carousel-item `+ (index == 0 ? 'active': '') +` >
 		<div id="main-container-c">
 			
-			<div id="sub-container" class="container bg-light">
+			<div id="sub-container" class="container">
 			  <div class="page-title">
-				<h1 class="title d-flex justify-content-center">` + humanDateFormat + `</h1>
+				<h1 class="title d-flex justify-content-center" id="date">` + humanDateFormat + `</h1>
 			  </div>
 			  
 			  <div class="card-columns card-main">
@@ -227,59 +227,12 @@ function setData(weatherData){
 				  </ul>	
 				  
 				</div>
-  
-			  </div>	
-				<div class="card-footer">
-				<small class="text-muted" id="time"></small>
-				</div>
+
 			</div>	
 		  </div>	
 	  </div>
 	  </div>`)
-	  console.log("after append");
-		
-		// document.getElementById("temp").innerHTML = "Temp: "+tempDay+"°C";
-		// document.getElementById("name").innerHTML = nameValue;
-		// document.getElementById("description").innerHTML = descriptionValue;
-		// document.getElementById("icon").src = "http://openweathermap.org/img/w/"+iconValue+".png";
-		// document.getElementById("feels_like").innerHTML = "Feels Like: "+feels_likeValue+"°C";
-		// document.getElementById("humidity").innerHTML = "Humidity: "+humidityValue+"%";
-
-		// document.getElementById("mili").innerHTML = milliseconds;
-		// document.getElementById("time").innerHTML = "Time: " + humanDateFormat;
-		// document.getElementById("tempDay").innerHTML = "Temp during the day: " + tempDay;
-		// document.getElementById("tempNight").innerHTML = "Temp during the night: " + tempNight;
-		// document.getElementById("icon").src = "http://openweathermap.org/img/w/"+ iconValue +".png";
-		// document.getElementById("icon") = iconValue +".png";
-		// document.getElementById("feels_likeDay").innerHTML = "Feels like Night:" + feels_likeNight+"°C";
-		// document.getElementById("feels_likeNight").innerHTML = "Feels Like Day: "+feels_likeNight+"°C";
-
-		// document.getElementById("humidity").innerHTML = "Humidity: "+ humidityValue +"%";
-		// document.	getElementById("wind_speed").innerHTML = wind_speed;
-		// document.getElementById("wind_deg").innerHTML = wind_deg;
-		// document.getElementById("clouds").innerHTML = clouds;
-		// document.getElementById("description").innerHTML = description;
-		// document.getElementById("icon").innerHTML = icon;
-	
-		console.log("finishes loop");
 		
 	})
-
-	//Example code
-	
-	//Get the tag with ID = temp
-	//Get the value of the temperature from weatherData 
-	//var tempDay = weatherData.main.temp;
-	
-	//set html
-	//temp.innerHTML = "Temp: "+tempDay+"°C";
-	
-	
-	
-	//OR it can be done all in 1 line also
-	//document.getElementById("temp").innerHTML = "Temp: "+weatherData.main.temp+"°C";
-	
-	
-	
 
 }

@@ -485,11 +485,20 @@ div.header{
 }
 #carousel-main .carousel-indicators li {
   background-color: #174CA1;
-  width: 50%;
+  width: 3%;
+}
+
+#carousel-main #sub-container {
+  /* background-color: #C2F3FF; */
 }
 
 #carousel-main .carousel-indicators .active {
   background-color: #211F84;
+}
+
+#carousel-main .carousel-inner #date {
+  margin-bottom: 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 table {
@@ -505,7 +514,11 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #709FEB;
+}
+
+.carousel.main {
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* FOOTER */
