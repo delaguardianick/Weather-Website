@@ -18,12 +18,7 @@
 
 <div id="main-container-c" >
 	
-	<div id="sub-container" class="container bg-light ">
-		
-		
-		
-		
-		
+	<div id="sub-container"  class="container">
 		
 		<div class="page-title">
 			<h1 class="title d-flex justify-content-center">City Comparison</h1>
@@ -120,7 +115,7 @@
 
 	</div>
 </div>
-		<?php include 'template/footer.php';?>	
+<?php include 'template/footer.php';?>	
 <script src="js/comparison1.js"></script>		
     </body>
 </html>

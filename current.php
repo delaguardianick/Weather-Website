@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/index.css">
 		
-        <?php include 'template/includes.php';?>
+   <?php include 'template/includes.php';?>
     </head>
     <body>
     <script src="" async defer></script>
@@ -20,7 +20,7 @@
 
 <div id="main-container-c">
 	
-	<div id="sub-container" class="container bg-light">
+	<div id="sub-container" class="container">
 		<div class="page-title">
 			<h1 class="title d-flex justify-content-center">Current Weather</h1>
 		</div>
