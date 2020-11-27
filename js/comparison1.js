@@ -66,7 +66,7 @@ $("#city3").change(function(){
 		var city = document.getElementById('city'+cityNum).value;	
 		if(city!="" || city===null){
 			getData(APICallType,city,cityNum);
-			sessionStorage.setItem("currCity"+cityNum, city);
+			//sessionStorage.setItem("currCity"+cityNum, city);
 		}else{
 			alert("Please enter a city");
 		}			
