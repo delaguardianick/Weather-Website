@@ -481,6 +481,9 @@ div.header{
 }
 
 #carousel-main .carousel-indicators {
+  margin-top: 2rem;
+}
+#carousel-main .carousel-indicators {
   position: relative;
 }
 #carousel-main .carousel-indicators li {
@@ -488,17 +491,17 @@ div.header{
   width: 3%;
 }
 
-#carousel-main #sub-container {
-  /* background-color: #C2F3FF; */
-}
-
 #carousel-main .carousel-indicators .active {
   background-color: #211F84;
 }
 
 #carousel-main .carousel-inner #date {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-family: 'Open Sans', sans-serif;
+}
+
+#carousel-main .carousel-inner #name {
+  font-size: 2.5rem;
 }
 
 table {

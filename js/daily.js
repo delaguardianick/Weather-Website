@@ -4,6 +4,7 @@ var APICallType ='oneCall';
 
 //Default city if no city has been searched
 var defaultCity ='Toronto';
+var city = defaultCity;
 
 //URL of php file that calls API
 url = window.location['href'].split('/');
@@ -38,6 +39,16 @@ $(function () {
 
  });
  
+ $("#city").change(function(){
+	searchCity();
+	$('#city').val(" ");
+	console.log("change city")
+	$(".carousel-inner").html("");
+	$(".carousel-indicators").html("");
+  });
+
+//Capitalize city name
+	
 
 /*
 This function will run when a button is pressed to search for a city
@@ -53,13 +64,14 @@ Make sure text field (input) has a matching ID (ID="city") in this case
  function searchCity(){
 		
 		//Get the value in the text field
-		var city = document.getElementById('city').value;	
+		city = document.getElementById('city').value;	
 		//If the text is not empty
 		if(city!=""){
 			//Get the data for the city in the text field
 			getData(APICallType,city);
 		//If the button is clicked and the input is blank
 		}else{
+			console.log("City: "+city);
 			alert("Please enter a city");
 		}			
 	}
@@ -99,6 +111,7 @@ city - the name of the city e.g. 'toronto'
  }
 
 
+
 /*
 This function will set the html of your page
 @param
@@ -107,6 +120,7 @@ weatherData - the json weather data for the current city
 */	
 function setData(weatherData){
 	console.log(weatherData);
+	c = city[0].toUpperCase() + city.slice(1);
 	var offset = weatherData.timezone_offset;
 	// temp (day night), feels like, humidy, time, sunrise, sunset, cloud coverage
 	// visibility, wind speed, wind direction
@@ -139,6 +153,8 @@ function setData(weatherData){
 		var clouds = item.clouds;
 		var description = item.weather[0].description;
 		var iconValue = item.weather[0].icon
+
+		
 
 		var dressValue;
 		if(tempDay >25){
@@ -174,11 +190,10 @@ function setData(weatherData){
 				<!-- Current Weather card -->
 				  <div class="card " >
 					<div class ="card-body">
-					  <h2 class = "card-title city-title" id="name"> `+ defaultCity +` <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" ></h2>
+					  <h2 class = "card-title city-title" id="name"> `+ (city == "" ? defaultCity : city) +` <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" ></h2>
 					  
 					  
 					  <h2 class="card-subtitle mb-2 text-muted city-title" id="description" >`+description+`</h2>
-					  
 					  
 					</div>	
 					<div>
