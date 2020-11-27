@@ -175,11 +175,11 @@ function setData(weatherData){
 				<!-- Current Weather card -->
 				  <div class="card " >
 					<div class ="card-body">
-					  <h2 class = "card-title city-title" id="name"> `+ defaultCity +`</h2>
+					  <h2 class = "card-title city-title" id="name"> `+ defaultCity +` <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" ></h2>
 					  
 					  
 					  <h2 class="card-subtitle mb-2 text-muted city-title" id="description" >`+description+`</h2>
-					  <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" >
+					  
 					  
 					</div>	
 					<div>
@@ -220,6 +220,7 @@ function setData(weatherData){
 					<li class="list-group-item current-list-item detail-weather-item"><p id="sunrise" class="current-details">Sunrise: `+ sunriseValue + ` </p></li>
 					<li class="list-group-item current-list-item detail-weather-item"><p id="sunset" class="current-details">Sunset: `+ sunsetValue + `</p></li>
 					<li class="list-group-item current-list-item detail-weather-item"><p id="cloudCoverage" class="current-details">Cloud coverage: `+ clouds + `% </p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="cloudCoverage" class="current-details">Humidity: `+ humidity + `% </p></li>
 					<li class="list-group-item current-list-item detail-weather-itemt"><p id="wind_speed" class="current-details">Wind speed: `+ wind_speed + ` km/h </p></li>
 					<li class="list-group-item current-list-item detail-weather-itemt"><p id="wind_speed" class="current-details">Wind Direction: `+ wind_deg + `° </p></li>
 					<li class="list-group-item current-list-item detail-weather-item"><p id="pressure" class="current-details">Pressure: `+ pressure + ` hPa </p></li>

@@ -476,17 +476,16 @@ div.header{
     filter: invert(100%);
 }
 
-#carrousel-main {
+#carousel-main {
   margin-top: 5em;
+}
+
+#carousel-item {
+  background-color: #EBFBFF;
 }
 
 #sub-container {
   background-color: #EBFBFF;
-}
-
-#daily-icon {
-  text-align: right;
-  width: 150%;
 }
 
 table {
