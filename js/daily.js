@@ -111,12 +111,28 @@ function setData(weatherData){
 	// temp (day night), feels like, humidy, time, sunrise, sunset, cloud coverage
 	// visibility, wind speed, wind direction
 	$.each(weatherData.daily, function(index, item){
+		$( "#test" ).append( "<strong>pre</strong>" );
 		var UnixTimeStamp = item.dt + offset;
 		var milliseconds = UnixTimeStamp* 1000 ;
 		var dateObject = new Date(milliseconds);
 		var humanDateFormat = dateObject.toLocaleString();
-		var wind_speed = valueCheck(item.wind_gust);
-		var wind_deg= valueCheck(item.wind_deg);
+
+		var sunrise = item.sunrise;
+		var sunset = item.sunset;
+		sunrise_time = new Date((sunrise+offset)*1000);
+		sunriseValue = sunrise_time.toUTCString().slice(-12, -4) + " AM ";
+	
+		sunset_time = new Date((sunset + offset +(12*60*60))*1000 );
+		sunsetValue = sunset_time.toUTCString().slice(-12, -4) + " PM" ;
+
+		var current_date = new Date()
+		var cday = current_date.getDay()
+		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+
+		var wind_speed = item.wind_speed;
+		var wind_deg= item.wind_deg;
+		var pressure= item.pressure;
 		   
 		var tempDay = item.temp.day;
 		var tempNight = item.temp.night;
@@ -125,31 +141,138 @@ function setData(weatherData){
 		var humidity = item.humidity;
 		var clouds = item.clouds;
 		var description = item.weather[0].description;
-		var iconValue = item.weather[0].icon;
+		var iconValue = item.weather[0].icon
 
-		document.getElementById("time").innerHTML = humanDateFormat;
-		document.getElementById("tempDay").innerHTML = "Temp during the day: " + tempDay;
-		// document.getElementById("tempNight").innerHTML = tempNight;
+		// $( ".carousel-inner" ).append( "<strong>Hello</strong>" );
+
+		var dressValue;
+	
+		if(tempDay >25){
+			dressValue="Currently very warm. Light clothing recommended ";
+		}else if(tempDay >15){
+			dressValue="It's a cool day. Light clothing recommended ";
+		}else if(tempDay >0){
+			dressValue="Chilly outside. Bring a sweater";
+		}else if(tempDay <=0){
+			dressValue="Freezing temperatures. Dress Warmly";
+		}else{
+			dressValue ="";
+		}
+		
+		console.log("before append");
+		$(".carousel-inner").append(`<div class="carousel-item `+ (index == 0 ? 'active': '') +` >
+		<div id="main-container-c">
+			
+			<div id="sub-container" class="container bg-light">
+			  <div class="page-title">
+				<h1 class="title d-flex justify-content-center">` + days[(cday + index)% 7] + ` - ` + humanDateFormat.slice(0,10)+ `</h1>
+			  </div>
+			  
+			  <div class="card-columns card-main">
+				
+				
+				<div class="weather-main">
+				<!-- Current Weather card -->
+				  <div class="card " >
+					<div class ="card-body">
+					  <h2 class = "card-title city-title" id="name"> `+ defaultCity +`</h2>
+					  
+					  
+					  <h2 class="card-subtitle mb-2 text-muted city-title" id="description" >`+description+`</h2>
+					  <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" >
+					  
+					</div>	
+					<div>
+					<ul class="list-group list-group-flush">
+						<table >
+							<tr>
+								<th></th>
+								<th >Temp:</th>
+								<th>Feels like:</th>
+							</tr>
+							<tr>
+								<td>Day</td>
+								<td><h3>`+ tempDay+`°C</h3></td>
+								<td><h3>`+ tempNight+`°C</h3></td>
+							</tr>
+							<tr>
+								<td>Night</td>
+								<td><h3>`+ feels_likeDay+`°C</h3></td>
+								<td><h3>`+ feels_likeNight+`°C</h3></td>
+							</tr>
+					</table>
+
+					 </div>
+				  </div>
+				  <!-- Current Weather card -->	
+				  <div class="card p-3">
+					<div class="card-body">
+					  <h5 class="card-title">Dress For The Weather!</h5>
+					  <p class="card-text" id="dress-recommend">`+ dressValue +`</p>
+					</div>
+				  </div>				
+				</div>		
+								 
+				<!-- Details Weather card -->	
+				<div class="card">
+				
+				  <ul class="list-group list-group-flush">
+					<li class="list-group-item current-list-item detail-weather-item"><p id="sunrise" class="current-details">Sunrise: `+ sunriseValue + ` </p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="sunset" class="current-details">Sunset: `+ sunsetValue + `</p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="cloudCoverage" class="current-details">Cloud coverage: `+ clouds + `% </p></li>
+					<li class="list-group-item current-list-item detail-weather-itemt"><p id="wind_speed" class="current-details">Wind speed: `+ wind_speed + ` km/h </p></li>
+					<li class="list-group-item current-list-item detail-weather-itemt"><p id="wind_speed" class="current-details">Wind Direction: `+ wind_deg + `° </p></li>
+					<li class="list-group-item current-list-item detail-weather-item"><p id="pressure" class="current-details">Pressure: `+ pressure + ` hPa </p></li>
+					
+				  </ul>	
+				  
+				</div>
+  
+			  </div>	
+				<div class="card-footer">
+				<small class="text-muted" id="time"></small>
+				</div>
+			</div>	
+		  </div>	
+	  </div>
+	  </div>`)
+	  console.log("after append");
+		
+		// document.getElementById("temp").innerHTML = "Temp: "+tempDay+"°C";
+		// document.getElementById("name").innerHTML = nameValue;
+		// document.getElementById("description").innerHTML = descriptionValue;
+		// document.getElementById("icon").src = "http://openweathermap.org/img/w/"+iconValue+".png";
+		// document.getElementById("feels_like").innerHTML = "Feels Like: "+feels_likeValue+"°C";
+		// document.getElementById("humidity").innerHTML = "Humidity: "+humidityValue+"%";
+
+		// document.getElementById("mili").innerHTML = milliseconds;
+		// document.getElementById("time").innerHTML = "Time: " + humanDateFormat;
+		// document.getElementById("tempDay").innerHTML = "Temp during the day: " + tempDay;
+		// document.getElementById("tempNight").innerHTML = "Temp during the night: " + tempNight;
 		// document.getElementById("icon").src = "http://openweathermap.org/img/w/"+ iconValue +".png";
-		// document.getElementById("feels_likeDay").innerHTML = feels_likeDay;
-		// document.getElementById("feels_likeNight").innerHTML = feels_likeNight;
-		// document.getElementById("humidity").innerHTML = humidity;
-		// document.getElementById("wind_speed").innerHTML = wind_speed;
+		// document.getElementById("icon") = iconValue +".png";
+		// document.getElementById("feels_likeDay").innerHTML = "Feels like Night:" + feels_likeNight+"°C";
+		// document.getElementById("feels_likeNight").innerHTML = "Feels Like Day: "+feels_likeNight+"°C";
+
+		// document.getElementById("humidity").innerHTML = "Humidity: "+ humidityValue +"%";
+		// document.	getElementById("wind_speed").innerHTML = wind_speed;
 		// document.getElementById("wind_deg").innerHTML = wind_deg;
 		// document.getElementById("clouds").innerHTML = clouds;
 		// document.getElementById("description").innerHTML = description;
 		// document.getElementById("icon").innerHTML = icon;
 	
+		console.log("finishes loop");
+		
 	})
 
 	//Example code
 	
 	//Get the tag with ID = temp
 	//Get the value of the temperature from weatherData 
-	//var tempValue = weatherData.main.temp;
+	//var tempDay = weatherData.main.temp;
 	
 	//set html
-	//temp.innerHTML = "Temp: "+tempValue+"°C";
+	//temp.innerHTML = "Temp: "+tempDay+"°C";
 	
 	
 	
