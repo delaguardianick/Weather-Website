@@ -7,3 +7,52 @@
     margin-top: 2em;
     /* width: 70%; */
     }
+
+.carousel.item {
+    display:block;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+/* 
+.carousel-control-prev span,
+.carousel-control-prev span {
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 7em;
+    margin-bottom: 7em;
+
+    background-color: #457B9D;
+}  */
+
+.carousel-control-prev {
+    /* Hide on mobile */
+    /* width: 50%; */
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-right:0;
+    height: 60%;
+    /* width: 10%; */
+    /* background-color: black; */
+    /* color: black; */
+    /* margin-left: auto; */
+}
+
+
+.carousel-control-next {
+    /* Hide on mobile */
+    width: 50%;
+    margin-top:auto;
+    margin-bottom: auto;
+    height: 50%;
+    /* background-color: black; */
+    margin-right: auto;
+}
+
+body {
+    /* background-color: black; */
+}
+
+
