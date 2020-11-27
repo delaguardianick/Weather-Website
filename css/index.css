@@ -480,12 +480,16 @@ div.header{
   margin-top: 5em;
 }
 
-#carousel-item {
-  background-color: #EBFBFF;
+#carousel-main .carousel-indicators {
+  position: relative;
+}
+#carousel-main .carousel-indicators li {
+  background-color: #174CA1;
+  width: 50%;
 }
 
-#sub-container {
-  background-color: #EBFBFF;
+#carousel-main .carousel-indicators .active {
+  background-color: #211F84;
 }
 
 table {

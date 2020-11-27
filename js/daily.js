@@ -115,7 +115,8 @@ function setData(weatherData){
 		var UnixTimeStamp = item.dt + offset;
 		var milliseconds = UnixTimeStamp* 1000 ;
 		var dateObject = new Date(milliseconds);
-		var humanDateFormat = dateObject.toLocaleString();
+		const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		var humanDateFormat = dateObject.toLocaleDateString(undefined, options);
 
 		var sunrise = item.sunrise;
 		var sunset = item.sunset;
@@ -124,12 +125,7 @@ function setData(weatherData){
 	
 		sunset_time = new Date((sunset + offset +(12*60*60))*1000 );
 		sunsetValue = sunset_time.toUTCString().slice(-12, -4) + " PM" ;
-
-		var current_date = new Date()
-		var cday = current_date.getDay()
-		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-
+		
 		var wind_speed = item.wind_speed;
 		var wind_deg= item.wind_deg;
 		var pressure= item.pressure;
@@ -143,29 +139,32 @@ function setData(weatherData){
 		var description = item.weather[0].description;
 		var iconValue = item.weather[0].icon
 
-		// $( ".carousel-inner" ).append( "<strong>Hello</strong>" );
-
 		var dressValue;
-	
 		if(tempDay >25){
-			dressValue="Currently very warm. Light clothing recommended ";
+			dressValue="Currently warm. Light clothing recommended ";
 		}else if(tempDay >15){
-			dressValue="It's a cool day. Light clothing recommended ";
-		}else if(tempDay >0){
-			dressValue="Chilly outside. Bring a sweater";
+			dressValue="It's a cool day, maybe a sweater recommended ";
+		}else if(tempDay >10){
+			dressValue="Chilly outside. Minimal outerwear ";
+		}else if(tempDay >5){
+			dressValue="It's a cold day. Puffer coats or down jackets with a beanie";
 		}else if(tempDay <=0){
-			dressValue="Freezing temperatures. Dress Warmly";
+			dressValue="Freezing temperatures. Double-layered and hooded down jackets";
 		}else{
 			dressValue ="";
 		}
 		
+		$(".carousel-indicators").append(`
+		<li data-target="#carouselExampleIndicators" data-slide-to="`+ index +`" `+ (index == 0 ? 'class="active"' : '') +`></li>
+		`)
+
 		console.log("before append");
 		$(".carousel-inner").append(`<div class="carousel-item `+ (index == 0 ? 'active': '') +` >
 		<div id="main-container-c">
 			
 			<div id="sub-container" class="container bg-light">
 			  <div class="page-title">
-				<h1 class="title d-flex justify-content-center">` + days[(cday + index)% 7] + ` - ` + humanDateFormat.slice(0,10)+ `</h1>
+				<h1 class="title d-flex justify-content-center">` + humanDateFormat + `</h1>
 			  </div>
 			  
 			  <div class="card-columns card-main">
