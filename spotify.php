@@ -17,7 +17,7 @@
         
 <div>
     <a id="authenticate" href="#" class="btn btn-primary">authenticate</a>
-    <button onclick="code_to_token()">Click me</button> 
+    <button onclick="code_to_token()">code to token</button> 
     <button onclick="getPlaylist()">player</button> 
 
 <div>
@@ -25,7 +25,7 @@
     <ul>        
     </ul>
 </div>
-
+<!-- 
  <div>
     <div id="login">
      <h1>First, log in to spotify</h1>
@@ -47,7 +47,7 @@
      <dt>Profile Image</dt><dd></dd>
     </dl>
     <p><a href="/">Log in again</a></p>
- </script>
+ </script> -->
 
     <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
     <script src="js/spotify-playlist.js"></script>
