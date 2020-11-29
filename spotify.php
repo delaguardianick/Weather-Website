@@ -18,10 +18,10 @@
 <div>
     <a id="authenticate" href="#" class="btn btn-primary">authenticate</a>
     <button onclick="code_to_token()">code to token</button> 
-    <button onclick="getPlaylist()">player</button> 
+    <button onclick="get_spotify_data()">get spotify data</button> 
 
 <div>
-    <p id="playlist-name"> Bish </p>
+    <h2 id="playlist-name"> Bish </h2>
     <ul>        
     </ul>
 </div>

@@ -5,6 +5,8 @@ var playlists_url="https://api.spotify.com/v1/users/"+user_id+"/playlists";
 var redirect_uri = 'https://www.cs.ryerson.ca/~ndelagua/project/weather/spotify.php';
 var my_client_id = 'b0a4d712f27a41a7859ddcdc511cd13d';
 var my_secret_id = `933877f01d6c40009ddd4f766654babe`;
+var access_token;
+var refresh_token;
 
 
 $(function () { 
@@ -28,8 +30,7 @@ function authenticate(){
       '&client_id=' + my_client_id +
       (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
       '&redirect_uri=' + encodeURIComponent(redirect_uri);
-    console.log(url);
-
+    console.log("authorization url = " + url);
     changeLink(url);
     // redirect to url not working
     // document.location.href=url;
@@ -46,7 +47,7 @@ function code_to_token(){
         if (auth_code == undefined) {
             console.log("Auth denied");
         };
-    console.log(auth_code);
+    console.log("auth_code = " + auth_code);
     ids = btoa(my_client_id+":"+my_secret_id)
     // var type = 'authorization_code';
     var body = {
@@ -63,48 +64,31 @@ function code_to_token(){
         },
         url: 'https://accounts.spotify.com/api/token',
         type: "POST",
-        // contentType : 'application/x-www-form-urlencoded',
         data : body,
         success: function(msg) {
-            $("#playlist-name").append("The result =" + (JSON.stringify(msg)));
+            // $("#playlist-name").append("The result =" + (JSON.stringify(msg)));
+            console.log(JSON.stringify(msg));
+            access_token = msg.access_token;
+            refresh_token = msg.refresh_token;
+            // get_spotify_data();
         }
     });
   }
 
-// beforeSend: function(request) {
-        //     request.setRequestHeader("Access-Control-Allow-Origin", "*");
-        //     request.setRequestHeader("Authoritzation", "Basic " + auth);
-        // },
-
-
-// function callAPI(){
-//     $.ajax({
-//         url: 'https://api.spotify.com/v1/me',
-//         headers: {
-//             'Authorization': 'Bearer ' + accessToken
-//         },
-//         success: function(response) {
-//             // ...
-//         }
-     
-// });
-// }
-
-// function getPlaylist(){
-//     $.ajax({
-//         type: "GET",
-//         beforeSend: function(request) {
-//             request.setRequestHeader("Authoritzation", token);
-//         },
-//         url: playlists_url,
-//         data: "json",
-//         processData: false,
-//         success: function(msg) {
-//         $("#playlist-name").append("The result =" + StringifyPretty(msg));
-//         }
-//     });
-// }
-
-// $.get()
-// beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password)); };
-  
+function get_spotify_data(){
+    var body = {
+    };
+    $.ajax({
+        headers: {
+            'Content-Type' : 'application/x-www-form-urlencoded',
+            'Authorization': 'Bearer ' + access_token,
+        },
+        url: 'https://api.spotify.com/v1/browse/featured-playlists',
+        type: "GET",
+        data : body,
+        success: function(msg) {
+            // $("#playlist-name").append("The result =" + (JSON.stringify(msg)));
+            console.log(JSON.stringify(msg));
+        }
+    });
+}
