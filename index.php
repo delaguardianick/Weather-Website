@@ -12,34 +12,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php include 'template/includes.php';?>
         <link rel="stylesheet" href="">
-
-
-
+        <script src="js/index.js"></script>
     </head>
     <body>
-	<?php include 'template/navigation.php';?>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <script src="" async defer></script>
-<div id="main-container"> 
-	   <div id="sub-container2">
-			<div style="width:100%">
-			<h1>Welcome<h1>
-				<div style="width:100%; padding:0 10% 0 10%"" method="post">
-					  
-					  <input class="inline form-control" type="text" id="city1" name="city1" placeholder="Search for a city" >
-					  <!--<button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('city1')"><i class="fa fa-search"></i></button>-->
+        <div class="home-page">
+            <div class="logo text-center">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61nuuPxUvaL.png" alt="" id="logo">
+            </div>
+            <div class="header text-center mt-4">
+                <h1>Welcome to the Weather</h1>
+                <p>One of the most reliable weather app to get latest information on forecast or historical data and more.</p>
+            </div>
+            <div class="row">
+                <div class="search-box text-justify">
+                    <input type="text" placeholder=" ">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <script src="" async defer></script>	
 
-				</div>
-				
-			</div>
-		</div>
-</div>
-	   
-	   
-	   
- <script src="js/redirect.js"></script>		
     </body>
 </html>

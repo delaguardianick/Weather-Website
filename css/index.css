@@ -61,6 +61,7 @@ div.header{
   /* border-radius: 5em !important; */
   transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
 }
+<<<<<<< HEAD
 
 .search-box input[type="text"]:focus {
   outline: none;
@@ -87,6 +88,34 @@ div.header{
   transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
 }
 
+=======
+
+.search-box input[type="text"]:focus {
+  outline: none;
+}
+
+.search-box input[type="text"]:focus,
+.search-box input[type="text"]:not(:placeholder-shown) {
+  width: 300px;
+  transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+
+.search-box input[type="text"]:focus+span,
+.search-box input[type="text"]:not(:placeholder-shown)+span {
+  bottom: 13px;
+  right: 10px;
+  transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+}
+
+.search-box input[type="text"]:focus+span:after,
+.search-box input[type="text"]:not(:placeholder-shown)+span:after {
+  top: 0;
+  right: 10px;
+  opacity: 1;
+  transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+}
+
+>>>>>>> development
 .search-box span {
   width: 25px;
   height: 25px;
