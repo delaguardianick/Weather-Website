@@ -1,11 +1,20 @@
 $(function () { 
-    console.log('jqeury imporeted');
-    url = window.location['href'].split('/');
-    url = url.slice(0,-1).join('/') + '/src/get_weather_data.php'
-    $(document).ready(function () {
-        //GET REUQEST TO PHP
-        $.get(url + '?type=current', function(data, status){
-            console.log("Data: " + data + "\nStatus: " + status);
-        });
+    var searchBox = document.querySelectorAll('.search-box input[type="text"] + span');
+    searchBox.forEach(elm => {
+    elm.addEventListener('click', () => {
+        elm.previousElementSibling.value = '';
+    });
+    });
+    var url = window.location['href'].split('/');
+    url = url.slice(0,-1).join('/') + '/current.php';
+    $('input').on('change', function () {
+        var city = $('input').val();
+        window.location.href = url;
+        if(city!="" || city===null){
+            sessionStorage.setItem("currCity", city);
+            window.location.href = url;
+        }else{
+            alert("Please enter a city");
+        }
     });
  });

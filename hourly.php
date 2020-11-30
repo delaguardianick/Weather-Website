@@ -13,7 +13,7 @@
     <body>
         <?php include 'template/navigation.php';?>
         <div id = "main-container" >
-            <div id = "sub-container" class="container bg-light">
+            <div id = "sub-container" class="container">
                 <div id="header-div">
                     <h1>Hourly Forecast</h1>
                     <form id="hour-form" class="form-inline">

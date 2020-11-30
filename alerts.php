@@ -20,7 +20,7 @@
         <![endif]-->
         <?php include 'template/navigation.php';?>
         <script src="" async defer></script>
-        <div class="main-content border border-dark mt-4">
+        <div class="main-content mt-4">
             <div class="city-content ml-2">
                 <h3>City: <span id="citySpan"></span></h3>
                 <h3>As of: <span id="asOf"></span></h3>

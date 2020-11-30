@@ -18,8 +18,22 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <script src="" async defer></script>
-        Trial
+        <div class="home-page">
+            <div class="logo text-center">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61nuuPxUvaL.png" alt="" id="logo">
+            </div>
+            <div class="header text-center mt-4">
+                <h1>Welcome to the Weather</h1>
+                <p>One of the most reliable weather app to get latest information on forecast or historical data and more.</p>
+            </div>
+            <div class="row">
+                <div class="search-box text-justify">
+                    <input type="text" placeholder=" ">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <script src="" async defer></script>	
+
     </body>
 </html>

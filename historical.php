@@ -12,10 +12,10 @@
     <body id="historical-body">
         <?php include 'template/navigation.php';?>
         <div id="historicalmain">
-            <div id="sub-container2">
-                <div id="historical-header">
+            <div id="historical-header">
                     <h1>Historical Weather Data for the Past 5 Days</h1>
                 </div>
+            <div id="sub-container2">
                 <div id="scrollableContainer">
                     <div id="day-container">
                         
