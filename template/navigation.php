@@ -1,7 +1,7 @@
 <?php 
 echo '
 <nav class="navbar navbar-expand-lg navbar-light text-white d-flex">
-    <a class="navbar-brand text-white" href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/61nuuPxUvaL.png" alt="" id="logo"> Weather</a>
+    <a class="navbar-brand text-white" href="index.php"> <img src="https://images-na.ssl-images-amazon.com/images/I/61nuuPxUvaL.png" alt="" id="logo"> ClosedWeather</a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
