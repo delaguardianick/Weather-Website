@@ -19,6 +19,27 @@
         <![endif]-->
         
         <script src="" async defer></script>
-        this is about page
+        <div class="main-content mt-4">
+            <div class="header text-center">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-message text-justify">
+                <p class="abt-box m-4">
+                    This page was inspired by ambiguous Canadian Weather and in order to help
+                    users survive, this website was made to offer wide range of functionalities.
+                </p>
+                <p class="abt-box m-4">
+                    On the website there are two initial sections; Forecast and Info. Forecast contains Current, Minutely, 
+                    Hourly, Daily and Historical which offers wide range of graphs and textual information. Second one is Info 
+                    contains About Us, Terminology, and Contact Us, all of which are informative pages. 
+                </p>
+                <p class="abt-box m-4">
+                    Next section includes Alerts pages which collects alerts provided by Government then alerts are shown in card format. 
+                    Moreover, another page is Playlist which utilizes Spotify API to give users playlist depending on weather. Lastly, 
+                    City Comparison page is provided where User can watch summarized weather information of multiple cities side by side.
+                </p>
+            </div>
+        </div>
+        <?php include 'template/footer.php';?>
     </body>
 </html>
