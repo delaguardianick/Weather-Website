@@ -16,40 +16,52 @@
  <?php include 'template/navigation.php';?>
         
 <div>
-    <a id="authenticate" href="#" class="btn btn-primary">authenticate</a>
-    <button onclick="code_to_token()">code to token</button> 
-    <button onclick="get_spotify_data()">get spotify data</button> 
+    <h2>WIP</h2>
+    <p>How to use: press all 3 buttons left to right and see</p>
+</div>
 
 <div>
-    <h2 id="playlist-name"> Bish </h2>
-    <ul>        
-    </ul>
+    <a id="authenticate" href="#" class="btn btn-primary">Authenticate</a>
+    <button onclick="code_to_token()">Get Access Token</button> 
+    <button onclick="recommend_playlist()">Get Recommended Playlist</button> 
+
+<div>
+    <br>
+    <h4>Sample Weather: </h4>
+    <h5>Description: Sunny</h5>
+    <h5>Temp: 12 °C</h5>
 </div>
-<!-- 
- <div>
-    <div id="login">
-     <h1>First, log in to spotify</h1>
-     <a href="/login">Log in</a>
-    </div>
-    <div id="loggedin">
-    </div>
- </div>
+<div id="show-playlist">
+    <!-- <table>
+        <tr>
+            <th> Playlist name: </th>
+            <th id="p_name"> Sunny days </th>
+        </tr>
+        <tr>
+            <td> Owner: </td>
+            <td id="p_owner"> Spotify </td>
+        </tr>
+        <tr>
+            <td> Description: </td>
+            <td id="p_description"> Spotify </td>
+        </tr>
+        <tr>
+            <td> Followers: </td>
+            <td id="p_followers"> Spotify </td>
+        <tr>
+            <td> 
+                Cover and playlist link:
+            </td>
+            <td>
+                <a href="" id="p_url" target="_blank">
+                    <img src="" alt="Playlist cover" id="p_cover">
+                </a> 
+            </td>
+            
+        </tr>
+    </table> -->
+</div>
 
- <script id="loggedin-template" type="text/x-handlebars-template">
-    <h1>Logged in as </h1>
-    <img id="avatar" width="200" src="" />
-    <dl>
-     <dt>Display name</dt><dd></dd>
-     <dt>Username</dt><dd></dd>
-     <dt>Email</dt><dd></dd>
-     <dt>Spotify URI</dt><dd><a href=""></a></dd>
-     <dt>Link</dt><dd><a href=""></a></dd>
-     <dt>Profile Image</dt><dd></dd>
-    </dl>
-    <p><a href="/">Log in again</a></p>
- </script> -->
-
-    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
     <script src="js/spotify-playlist.js"></script>
     </body>
 </html>

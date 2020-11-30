@@ -501,29 +501,46 @@ div.header{
   font-family: 'Open Sans', sans-serif;
 }
 
+#carousel-main .card-body h2 {
+  text-align: center;
+}
+
 #carousel-main .carousel-inner #name {
   font-size: 2.5rem;
 }
 
-table {
+#main-container-c table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-td, th {
+#main-container-c td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
+#main-container-c tr:nth-child(even) {
   background-color: #709FEB;
 }
 
 .carousel.main {
   font-family: 'Open Sans', sans-serif;
 }
+
+/* Spotify */
+
+#show-playlist {
+  margin-top: 3em;
+  margin-left: 1em;
+  border: 1px;
+}
+
+#show-playlist img {
+  width: 40%;
+}
+
 
 /* FOOTER */
   body{

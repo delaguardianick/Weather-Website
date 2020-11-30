@@ -7,6 +7,7 @@ var my_client_id = 'b0a4d712f27a41a7859ddcdc511cd13d';
 var my_secret_id = `933877f01d6c40009ddd4f766654babe`;
 var access_token;
 var refresh_token;
+var playlistData;
 
 
 $(function () { 
@@ -75,7 +76,30 @@ function code_to_token(){
     });
   }
 
-function get_spotify_data(){
+var descr = "Sunny";
+var temp = 12;
+var playlist;
+var playlist_id = "";
+function recommend_playlist(){
+    if (descr == "Sunny"){
+        playlist = "Sunny Day";
+    } else if (descr == "Rain" && temp > 10){
+        playlist = "Rainy Day Jazz";
+    } else if (descr == "Clouds"){
+        playlist = "Cloudy Days";
+    } else if (descr == "Rain" && temp < 10) {
+        playlist = "cold days cold nights";
+    }
+
+    (playlist == "Sunny Day" ? playlist_id = '37i9dQZF1DX1BzILRveYHb' : '');
+    (playlist == "Rainy Day Jazz" ? playlist_id = '37i9dQZF1DWYxwmBaMqxsl' : '');
+    (playlist == "Cloudy Days" ? playlist_id = '3oh3NmpgHy2leLcu7oobAr' : '');
+    (playlist == "cold days cold nights" ? playlist_id = '00p7Hl47ZoodxWVuFjDpEE' : '');
+    console.log("playlist id = " + playlist_id + typeof playlist_id)
+    get_playlist();
+}
+
+function get_playlist(){
     var body = {
     };
     $.ajax({
@@ -83,12 +107,62 @@ function get_spotify_data(){
             'Content-Type' : 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + access_token,
         },
-        url: 'https://api.spotify.com/v1/browse/featured-playlists',
+        url: 'https://api.spotify.com/v1/playlists/' + playlist_id,
         type: "GET",
         data : body,
         success: function(msg) {
             // $("#playlist-name").append("The result =" + (JSON.stringify(msg)));
             console.log(JSON.stringify(msg));
+            playlistData = msg;
+            // console.log("Playlist data = " + playlistData)
+            set_playlist_data(playlistData);
         }
     });
 }
+
+function set_playlist_data(playlistData) {
+    $("#show-playlist").append(`<table>
+    <tr>
+        <th> Playlist name: </th>
+        <th id="p_name"> Sunny days </th>
+    </tr>
+    <tr>
+        <td> Owner: </td>
+        <td id="p_owner"> Spotify </td>
+    </tr>
+    <tr>
+        <td> Description: </td>
+        <td id="p_description"> Spotify </td>
+    </tr>
+    <tr>
+        <td> Followers: </td>
+        <td id="p_followers"> Spotify </td>
+    <tr>
+        <td> 
+            Cover and playlist link:
+        </td>
+        <td>
+            <a href="" id="p_url" target="_blank">
+                <img src="" alt="Playlist cover" id="p_cover">
+            </a> 
+        </td>
+        
+    </tr>
+</table>`);
+    console.log("Here");
+    p_name = playlistData.name;
+    p_owner = playlistData.owner.display_name;
+    p_description = playlistData.description;
+    p_url = playlistData.external_urls.spotify;
+    p_cover = playlistData.images[0].url;
+    p_followers = playlistData.followers.total;
+
+    document.getElementById("p_name").innerHTML = p_name;
+    document.getElementById("p_owner").innerHTML = p_owner;
+    document.getElementById("p_description").innerHTML = p_description;
+    document.getElementById("p_url").href = p_url;
+    document.getElementById("p_cover").src = p_cover;
+    document.getElementById("p_followers").innerHTML = p_followers;
+    console.log("Setting complete");
+}
+
