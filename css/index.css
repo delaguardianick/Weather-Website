@@ -541,9 +541,14 @@ div.header{
   width: 40%;
 }
 
+#spotify {
+  align-items: center;
+}
+
+
 
 /* FOOTER */
-  body{
+  .footer body{
     min-height: 100vh;
     position: relative;
   }

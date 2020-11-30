@@ -10,7 +10,7 @@
 		
         <?php include 'template/includes.php';?>
     </head>
-<body>
+<body id="spotify">
 <script src="" async defer></script>
 
  <?php include 'template/navigation.php';?>
@@ -22,8 +22,8 @@
 
 <div>
     <a id="authenticate" href="#" class="btn btn-primary">Authenticate</a>
-    <button onclick="code_to_token()">Get Access Token</button> 
-    <button onclick="recommend_playlist()">Get Recommended Playlist</button> 
+    <button onclick="code_to_token()">Playlist for the weather</button> 
+    <!-- <button onclick="recommend_playlist()">Get Recommended Playlist</button>  -->
 
 <div>
     <br>
@@ -61,6 +61,7 @@
         </tr>
     </table> -->
 </div>
+
 
     <script src="js/spotify-playlist.js"></script>
     </body>
