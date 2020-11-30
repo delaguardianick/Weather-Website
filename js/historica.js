@@ -166,20 +166,29 @@ function setData(weatherData){
 		<div class="historical-standard" data-day="`+dateObject.toLocaleString("en-US", {day: "numeric"})+`">
 				<p class="date-heading">`+humanDateFormat+`</p>
 				<img class="iconimg" src="http://openweathermap.org/img/wn/`+item.weather[0].icon+`.png"/>
-				<p class="historical-info"><b>Temp:</b> `+valueCheck(item.temp)+`</p>
-				<p class="historical-info"><b>Feels Like:</b> `+valueCheck(item.feels_like)+`</p>
+				<p class="historical-info"><b>Temp:</b></p><br>
+				<p class="historical-info">`+valueCheck(item.temp)+`</p>
+				<p class="historical-info"><b>Feels Like:</b></p>
+				<p class="historical-info">`+valueCheck(item.feels_like)+`</p>
 				<p class="historical-info"><button class="btn btn-primary collapsebtn" data-toggle="collapse" onClick="MoreInfoToggle()" href="#o" data-target="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button></p>
 				<div class="collapse MoreInfo" id="collapseExample">
 					<div class="card card-body ">
 						<p class="historical-info"><b>Description:</b></p>
 						<p class="historical-info">`+valueCheck(item.weather[0].description)+`</p>
-						<p class="historical-info"><b>Pressure:</b> `+valueCheck(item.pressure)+`</p>
-						<p class="historical-info"><b>Humidity:</b> `+valueCheck(item.humidity)+`</p>
-						<p class="historical-info"><b>Visibility:</b> `+valueCheck(item.visibility)+`</p>
-						<p class="historical-info"><b>UV:</b> `+valueCheck(item.uvi)+`</p>
-						<p class="historical-info"><b>Wind Speed:</b> `+valueCheck(item.wind_speed)+`</p>
-						<p class="historical-info"><b>Wind Gust:</b> `+valueCheck(item.wind_gust)+`</p>
-						<p class="historical-info"><b>Wind Degree:</b> `+valueCheck(item.wind_deg)+`</p>
+						<p class="historical-info"><b>Pressure:</b></p>
+						<p class="historical-info">`+valueCheck(item.pressure)+`</p>
+						<p class="historical-info"><b>Humidity:</b></p>
+						<p class="historical-info">`+valueCheck(item.humidity)+`</p>
+						<p class="historical-info"><b>Visibility:</b></p>
+						<p class="historical-info">`+valueCheck(item.visibility)+`</p>
+						<p class="historical-info"><b>UV:</b></p>
+						<p class="historical-info">`+valueCheck(item.uvi)+`</p>
+						<p class="historical-info"><b>Wind Speed:</b></p>
+						<p class="historical-info">`+valueCheck(item.wind_speed)+`</p>
+						<p class="historical-info"><b>Wind Gust:</b></p>
+						<p class="historical-info">`+valueCheck(item.wind_gust)+`</p>
+						<p class="historical-info"><b>Wind Degree:</b></p>
+						<p class="historical-info">`+valueCheck(item.wind_deg)+`</p>
 					</div>
 				</div>
 			</div>
