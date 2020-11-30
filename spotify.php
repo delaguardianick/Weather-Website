@@ -3,17 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Current Weather Data</title>
+        <title>Playlist for the Weather</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/index.css">
-		
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+        <!-- <link rel="stylesheet" href="css/daily.css"> -->
+        
         <?php include 'template/includes.php';?>
     </head>
-<body id="spotify">
-<script src="" async defer></script>
-
+    <body>
+    <script src="" async defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
  <?php include 'template/navigation.php';?>
+ <?php include 'template/footer.php';?>
         
 <div>
     <h2>WIP</h2>
@@ -62,6 +65,34 @@
     </table> -->
 </div>
 
+<!-- Card -->
+<div class="playlist-card">
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" id="p_cover" src=""
+      alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title" id="p_name">Card title</h4>
+    <!-- Text -->
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+      content.</p>
+    <!-- Button -->
+    <a href="#" class="btn btn-primary" id="p_url">
+        <img src="src\spotify-logo.png" alt="">
+    </a>
+
+  </div>
+
+</div>
+<!-- Card -->
 
     <script src="js/spotify-playlist.js"></script>
     </body>

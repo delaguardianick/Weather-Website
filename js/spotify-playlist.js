@@ -90,17 +90,19 @@ function recommend_playlist(){
     } else if (descr == "Rain" && temp < 10) {
         playlist = "cold days cold nights";
     }
-    console.log("first");
 
-    (playlist == "Sunny Day" ? playlist_id = '37i9dQZF1DX1BzILRveYHb' : '');
-    (playlist == "Rainy Day Jazz" ? playlist_id = '37i9dQZF1DWYxwmBaMqxsl' : '');
-    (playlist == "Cloudy Days" ? playlist_id = '3oh3NmpgHy2leLcu7oobAr' : '');
-    (playlist == "cold days cold nights" ? playlist_id = '00p7Hl47ZoodxWVuFjDpEE' : '');    
-    console.log("sec");
-    get_playlist();
+    get_playlist_id();
+    request_playlist();
 }
 
-function get_playlist(){
+function get_playlist_id() {
+    $.getJSON("src\playlistsJSON.json", function(json) {
+        playlist_id = json.playlists.playlist;
+        console.log(playlist_id);
+    });
+}
+
+function request_playlist(){
     var body = {
     };
     $.ajax({
