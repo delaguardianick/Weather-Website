@@ -455,6 +455,7 @@ div.header{
     width:100%;
     background: #EBFBFF;
     color:#264672;
+    padding-bottom: 6.5em;
   }
   #term-info{
     display: flex;
