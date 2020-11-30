@@ -18,12 +18,7 @@
 
 <div id="main-container-c" >
 	
-	<div id="sub-container" class="container bg-light ">
-		
-		
-		
-		
-		
+	<div id="sub-container"  class="container">
 		
 		<div class="page-title">
 			<h1 class="title d-flex justify-content-center">City Comparison</h1>
@@ -41,7 +36,7 @@
 			<div class="form-inline" method="post">
 				  
 				  <input class="inline form-control" type="text" id="city1" name="city1" placeholder="Search for a city" >
-				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('1')"><i class="fa fa-search"></i></button>
+				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('1')"><i class="fa fa-search"></i></button>
 
 			</div>
 
@@ -69,7 +64,7 @@
 			<div class="form-inline" method="post">
 				  
 				  <input class="inline form-control" type="text" id="city2" name="city2" placeholder="Search for a city" >
-				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('2')"><i class="fa fa-search"></i></button>
+				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('2')"><i class="fa fa-search"></i></button>
 
 			</div>
 
@@ -96,7 +91,7 @@
 			<div class="form-inline" method="post">
 				  
 				  <input class="inline form-control" type="text" id="city3" name="city3" placeholder="Search for a city" >
-				  <button class="inline btn btn-primary my-2 my-sm-0" onclick="searchCity('3')"><i class="fa fa-search"></i></button>
+				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('3')"><i class="fa fa-search"></i></button>
 
 			</div>
 
@@ -120,7 +115,7 @@
 
 	</div>
 </div>
-		<?php include 'template/footer.php';?>	
+<?php include 'template/footer.php';?>	
 <script src="js/comparison1.js"></script>		
     </body>
 </html>

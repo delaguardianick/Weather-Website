@@ -14,11 +14,33 @@
         <?php include 'template/includes.php';?>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-        contact us
+	 <?php include 'template/navigation.php';?>
+	
+	
+
+<div class="container-contact">
+  <form action="/action_page.php" style="margin-bottom:80px;">
+    <label for="fname">First Name</label>
+    <input class="contact-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input class="contact-input" type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="lname">E-mail</label>
+    <input class="contact-input" type="text" id="email" name="email" placeholder="Your email..">
+
+    <label for="subject">Subject</label>
+    <textarea class="contact-input" id="subject" name="subject" placeholder="Comments.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+
+
+     
+        <script src="js/redirect.js" async defer></script>
+ 		<?php include 'template/footer.php';?>	 
     </body>
 </html>

@@ -35,6 +35,7 @@ $(function () {
 
 $("#city").change(function(){
   searchCity();
+  $('#city').val(" ");
 });
 
 /*
@@ -89,7 +90,7 @@ city - the name of the city e.g. 'toronto'
 				setData(weatherData);
 			}
 			//If the city was not valid, make an alert
-			else if (weatherData.cod==="404"){
+			else if (weatherData.cod==="404" || weatherData.cod==="400"){
 				alert(city+" is not a valid city");
 			}
 			
@@ -187,3 +188,6 @@ function setData(weatherData){
 	
 	
 }
+
+
+

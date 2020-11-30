@@ -39,26 +39,26 @@ $(function () {
  
 $("#city").change(function(){
   searchCityRedirect();
+  $('#city').val(" ");
 }); 
  
  $("#city1").change(function(){
-	 console.log("Calling city1");
 
   searchCity("1");
-   $('#city1').val("");
+   $('#city1').val(" ");
 });
 
 
 $("#city2").change(function(){
 
   searchCity("2");
-    $('#city2').val("");
+    $('#city2').val(" ");
 });
 
 $("#city3").change(function(){
 
   searchCity("3");
-  	$('#city3').val("");
+  	$('#city3').val(" ");
 });
  
  function searchCity(cityNum){
@@ -66,7 +66,7 @@ $("#city3").change(function(){
 		var city = document.getElementById('city'+cityNum).value;	
 		if(city!="" || city===null){
 			getData(APICallType,city,cityNum);
-			sessionStorage.setItem("currCity"+cityNum, city);
+			//sessionStorage.setItem("currCity"+cityNum, city);
 		}else{
 			alert("Please enter a city");
 		}			
@@ -148,9 +148,8 @@ function setData(weatherData,cityNum){
 
 	var time= d.toLocaleString();
 	
-	document.getElementById("time1").innerHTML = "Last updated: "+time;
-	document.getElementById("time2").innerHTML = "Last updated: "+time;
-	document.getElementById("time3").innerHTML = "Last updated: "+time;
+	document.getElementById("time"+cityNum).innerHTML = "Last updated: "+time;
+	
 
 }
 
