@@ -477,7 +477,7 @@ div.header{
 }
 
 #carousel-main {
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 #carousel-main .carousel-indicators {
@@ -509,19 +509,20 @@ div.header{
   font-size: 2.5rem;
 }
 
-#main-container-c table {
+table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#main-container-c td, th {
+
+td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-#main-container-c tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #709FEB;
 }
 
@@ -541,10 +542,53 @@ div.header{
   width: 40%;
 }
 
-#spotify {
+#spotify #text, #spotify #sample-weather {
   align-items: center;
+  width: 500px;
+  margin: 0 auto;
 }
 
+#spotify #rec-playlist {
+  width: 80%
+}
+
+.container {
+  /* width: 25%; */
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 3em;
+}
+
+.card {
+  border: 0px;
+}
+
+.card-header {
+  background-color : transparent;
+}
+
+#p_cover {
+  width: 30%;
+}
+
+#card-img {
+  display: inline-block;
+  vertical-align: top ;
+  width: 15%;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 3em;
+}
+
+#card-descrip {
+  display:inline-block;
+}
+
+#p_url img {
+  width: 30px;
+}
 
 
 /* FOOTER */

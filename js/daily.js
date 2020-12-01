@@ -16,7 +16,6 @@ url = url.slice(0,-1).join('/') + '/src/get_weather_data.php';
 This function will run when the page first opens up or is reloaded
 */
 $(function () { 
-   
     $(document).ready(function () {
         //GET REUQEST TO PHP
 		console.log("Page refreshed");
@@ -120,7 +119,6 @@ weatherData - the json weather data for the current city
 */	
 function setData(weatherData){
 	console.log(weatherData);
-	c = city[0].toUpperCase() + city.slice(1);
 	var offset = weatherData.timezone_offset;
 	// temp (day night), feels like, humidy, time, sunrise, sunset, cloud coverage
 	// visibility, wind speed, wind direction
@@ -188,7 +186,7 @@ function setData(weatherData){
 				
 				<div class="weather-main">
 				<!-- Current Weather card -->
-				  <div class="card " >
+				  <div class="card">
 					<div class ="card-body">
 					  <h2 class = "card-title city-title" id="name"> `+ (city == "" ? defaultCity : city) +` <img id="daily-icon" src="http://openweathermap.org/img/w/`+ iconValue +`.png" width="auto;" height="auto" alt="Card image cap" ></h2>
 					  
@@ -197,7 +195,7 @@ function setData(weatherData){
 					  
 					</div>	
 					<div>
-					<ul class="list-group list-group-flush">
+					<ul class="list-group list-group-flush" id="temp-card">
 						<table >
 							<tr>
 								<th></th>

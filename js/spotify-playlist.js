@@ -8,14 +8,18 @@ var my_secret_id = `933877f01d6c40009ddd4f766654babe`;
 var access_token;
 var refresh_token;
 var playlistData;
-
+var descr = "Sunny";
+var temp = 12;
+var playlist;
+var playlist_id = "";
 
 $(function () { 
    
     $(document).ready(function () {
         //GET REUQEST TO PHP
         authenticate();
-		console.log("Page refreshed");
+        console.log("Page refreshed");
+        
         // getData(user_id);
     });
 
@@ -46,7 +50,8 @@ function changeLink(url) {
 function code_to_token(){
     var auth_code = window.location.href.split("code=")[1];
         if (auth_code == undefined) {
-            console.log("Auth denied");
+            // console.log("Auth denied");
+            authenticate();
         };
     console.log("auth_code = " + auth_code);
     ids = btoa(my_client_id+":"+my_secret_id)
@@ -76,10 +81,8 @@ function code_to_token(){
     });
   }
 
-var descr = "Sunny";
-var temp = 12;
-var playlist;
-var playlist_id = "";
+
+
 function recommend_playlist(){
     if (descr == "Sunny"){
         playlist = "Sunny Day";
@@ -91,18 +94,25 @@ function recommend_playlist(){
         playlist = "cold days cold nights";
     }
 
+    (playlist == "Sunny Day" ? playlist_id = '37i9dQZF1DX1BzILRveYHb' : '');
+    (playlist == "Rainy Day Jazz" ? playlist_id = '37i9dQZF1DWYxwmBaMqxsl' : '');
+    (playlist == "Cloudy Days" ? playlist_id = '3oh3NmpgHy2leLcu7oobAr' : '');
+    (playlist == "cold days cold nights" ? playlist_id = '00p7Hl47ZoodxWVuFjDpEE' : '');    
+    console.log("playlist_id =" + playlist_id)
     get_playlist_id();
-    request_playlist();
+    request_playlist() ;
 }
 
 function get_playlist_id() {
-    $.getJSON("src\playlistsJSON.json", function(json) {
-        playlist_id = json.playlists.playlist;
-        console.log(playlist_id);
+    $.getJSON("src/playlistsJSON.json", function(json) {
+        playlist_id = json.playlists[playlist];
+        console.log("RETURNS = " + playlist_id)
     });
+   
 }
 
 function request_playlist(){
+    console.log("playlist_id =" + playlist_id)
     var body = {
     };
     $.ajax({
@@ -124,35 +134,6 @@ function request_playlist(){
 }
 
 function set_playlist_data(playlistData) {
-    $("#show-playlist").append(`<table>
-    <tr>
-        <th> Playlist name: </th>
-        <th id="p_name"> Sunny days </th>
-    </tr>
-    <tr>
-        <td> Owner: </td>
-        <td id="p_owner"> Spotify </td>
-    </tr>
-    <tr>
-        <td> Description: </td>
-        <td id="p_description"> Spotify </td>
-    </tr>
-    <tr>
-        <td> Followers: </td>
-        <td id="p_followers"> Spotify </td>
-    <tr>
-        <td> 
-            Cover and playlist link:
-        </td>
-        <td>
-            <a href="" id="p_url" target="_blank">
-                <img src="" alt="Playlist cover" id="p_cover">
-            </a> 
-        </td>
-        
-    </tr>
-</table>`);
-    console.log("Here");
     p_name = playlistData.name;
     p_owner = playlistData.owner.display_name;
     p_description = playlistData.description;
@@ -160,12 +141,29 @@ function set_playlist_data(playlistData) {
     p_cover = playlistData.images[0].url;
     p_followers = playlistData.followers.total;
 
-    document.getElementById("p_name").innerHTML = p_name;
-    document.getElementById("p_owner").innerHTML = p_owner;
-    document.getElementById("p_description").innerHTML = p_description;
-    document.getElementById("p_url").href = p_url;
-    document.getElementById("p_cover").src = p_cover;
-    document.getElementById("p_followers").innerHTML = p_followers;
-    console.log("Setting complete");
+    $("#show-playlist").append(`<div class="container">
+    <div class="card flex-row flex-wrap" id="rec-playlist">
+        <img src="`+ p_cover +`" alt="" id="p_cover">
+        <div class="card-block px-2">
+            <h4 class="card-title" id="p_name">Title: `+ p_name +`</h4>
+            <h5 class="card-title" id="p_owner">Owner: `+ p_owner +`</h5>
+            <p class="card-text" id="p_descr">Description: `+ p_description +`</p>
+            <p class="card-text" id="p_followers">Followers: `+ p_followers +`</p>
+            <a href="`+ p_url +`" target="_blank" class="" id="p_url">
+                <img src="https://www.cs.ryerson.ca/~ndelagua/project/weather/src/spotify-logo.png" alt="" id="">
+            </a>
+        </div>
+        <div class="w-100"></div>
+    </div>
+    <br>
+</div>`);
+    
+    // document.getElementById("p_name").innerHTML = p_name;
+    // document.getElementById("p_owner").innerHTML = p_owner;
+    // document.getElementById("p_description").innerHTML = p_description;
+    // document.getElementById("p_url").href = p_url;
+    // document.getElementById("p_cover").src = p_cover;
+    // document.getElementById("p_followers").innerHTML = p_followers;
+    // console.log("Setting complete");
 }
 
