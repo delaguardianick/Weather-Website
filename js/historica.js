@@ -173,10 +173,13 @@ function setData(weatherData){
 	var milliseconds = UnixTimeStamp* 1000 ;
 	var dateObject = new Date(milliseconds);
 	var humanDateFormat = dateObject.toLocaleString();
+	humanDateFormat = humanDateFormat.split(" ");
+	console.log(humanDateFormat);
 	//appends the information gathered to the day-container
 	$('#day-container').append(`
 		<div class="historical-standard" data-day="`+dateObject.toLocaleString("en-US", {day: "numeric"})+`">
-				<p class="date-heading">`+humanDateFormat+`</p>
+				<p class="date-heading">`+humanDateFormat[0]+`</p>
+				<p class="date-heading">`+humanDateFormat[1]+` `+humanDateFormat[2]+`</p>
 				<img class="iconimg" src="http://openweathermap.org/img/wn/`+item.weather[0].icon+`.png"/>
 				<p class="historical-info"><b>Temp:</b></p>
 				<p class="historical-info">`+valueCheck(item.temp)+`</p>

@@ -289,34 +289,27 @@ div.header{
     font-size:1.5vw;
   }
  }
- @media screen and (max-width:860px){
-  #sub-container2{
-    overflow-x: scroll;
-  }
-  .date-heading{
-    font-size: medium;
-  }
-  .historical-info{
-    font-size:medium;
-  }
- }
-@media screen and (max-width:600px){
+
+@media screen and (max-width:860px){
   #sub-container2{
     display: inline-grid !important;
     width: 94%;
     margin-left: 3%;
     margin-right: 3%;
+    overflow-x:scroll;
   }
-  .historical-standard{
-      margin-left:1%;
-      margin-right: 1%;
-      width: 10em !important;
+  
+.historical-standard{
+  margin-left:1%;
+  margin-right: 1%;
+  width: 10em !important;
   }
+
   .date-heading{
-    font-size:3vw;
+    font-size:0.9rem;
   }
   .historical-info{
-    font-size:2.5vw;
+    font-size:0.8rem;
   }
   .historical-info button {
     background-color: #0F326B;
