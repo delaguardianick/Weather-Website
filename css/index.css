@@ -11,11 +11,12 @@ nav #logo {
 .dropdown-item:hover{
   background: #25456A;
 }
-nav, .dropdown-menu, .search-btn{
-  background-color: #7C7BE0;
+nav, .dropdown-menu{
+  background-color: #110F43;
 }
 .search-btn{
-  border-color: #7c7be0;
+  background-color: #0F326B;
+  border-color: #0F326B;
 }
 .nav-item{
   margin: 0 5px;
@@ -25,7 +26,7 @@ body{
 }
 /*HOME PAGE*/
 .home-page{
-  background: #7C7BE0;
+  background: #110F43;
   height: 100vh;
   padding: 5%;
 }
@@ -60,10 +61,6 @@ div.header{
   background-color: transparent;
   /* border-radius: 5em !important; */
   transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
-}
-
-.search-box input[type="text"]:focus {
-  outline: none;
 }
 
 .search-box input[type="text"]:focus,
@@ -108,13 +105,29 @@ div.header{
   transform: rotate(-45deg);
 }
 
-.search-box span:after {
-  transform: rotate(45deg);
-  opacity: 0;
-  top: -20px;
-  right: -10px;
-  transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+
+
+.search-box input[type="text"]:focus,
+.search-box input[type="text"]:not(:placeholder-shown) {
+  width: 300px;
+  transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
 }
+
+.search-box input[type="text"]:focus+span,
+.search-box input[type="text"]:not(:placeholder-shown)+span {
+  bottom: 13px;
+  right: 10px;
+  transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+}
+
+.search-box input[type="text"]:focus+span:after,
+.search-box input[type="text"]:not(:placeholder-shown)+span:after {
+  top: 0;
+  right: 10px;
+  opacity: 1;
+  transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+}
+
 
 /* Hourly */
 
@@ -157,7 +170,7 @@ div.header{
   
 }
 #hourly-table th{
-  background:#1D1F20;
+  background:#110F43;
   color: #EBFBFF;
   border:#1D1F20 1px solid;
   padding:10px;
@@ -210,7 +223,7 @@ div.header{
   margin:15px;
 }
 #historical-header h1{
-  font-size: 1.8rem;
+  font-size: 3.5vw;
 }
 #sub-container2{
   display: flex;
@@ -219,7 +232,7 @@ div.header{
   text-align: center;
   min-height:300px;
   width: 97%;
-  background:#174CA1;
+  background:#0F326B;
   color:white;
   border-radius: 2% !important;
   margin:25px;
@@ -254,15 +267,11 @@ div.header{
 
 }
 .date-heading{
-  font-size:1.25rem;
   margin-top: 2%;
 }
-.historical-info{
-  font-size:1.2rem;
-}
 .historical-info button{
-  background-color: #7C7BE0;
-  border-color: #7C7BE0;
+  background-color: #0F326B;
+  border-color: #0F326B;
 }
 .iconimg{
   background:#EBFBFF;
@@ -272,23 +281,31 @@ div.header{
    margin-left: 1%;
    margin-right: 1%;
  }
+ @media screen and (min-width:600px){
+  .date-heading{
+    font-size:2vw;
+  }
+  .historical-info{
+    font-size:1.5vw;
+  }
+ }
+ @media screen and (max-width:860px){
+  #sub-container2{
+    overflow-x: scroll;
+  }
+  .date-heading{
+    font-size: medium;
+  }
+  .historical-info{
+    font-size:medium;
+  }
+ }
 @media screen and (max-width:600px){
-  #historicalmain{
-    /* overflow-x:scroll; */
-    width: unset !important;
-  }
-  #scrollableContainer{
-    width: unset !important;
-  }
   #sub-container2{
     display: inline-grid !important;
-    overflow-x: scroll;
     width: 94%;
     margin-left: 3%;
     margin-right: 3%;
-  }
-  #historical-header h1{
-      font-size:medium;
   }
   .historical-standard{
       margin-left:1%;
@@ -296,14 +313,14 @@ div.header{
       width: 10em !important;
   }
   .date-heading{
-      font-size:smaller;
+    font-size:3vw;
   }
   .historical-info{
-      font-size:smaller;
+    font-size:2.5vw;
   }
   .historical-info button {
-    background-color: #7C7BE0;
-    border-color: #7C7BE0;
+    background-color: #0F326B;
+    border-color: #0F326B;
   }
 }
 /*ABOUT US*/
@@ -371,40 +388,44 @@ div.header{
 	text-align: center;
 	justify-content: center;
 	align-items: center;
-	background: url(https://savoiragile.com/wp-content/uploads/2015/05/shutterstock_124738093.jpg) no-repeat center center/cover; 
+	background: #EBFBFF;
 	width:100%; 
 	height:100vh;
 }
+
+/* Current and comparison css*/
+
+
 
 
 /* Current and comparison media query*/
 
 
 
-  @media screen and (max-width:900px){
-  .card-main-comp {
-    display:flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-left: auto;
-      margin-right: auto;
-      width: 100%; 
-  }
+@media screen and (max-width:900px){
+.card-main-comp {
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%; 
+}
 
-  .card-main {
-    display:flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin-left: auto;
-      margin-right: auto;
-      width: 100%; 
-  }
+.card-main {
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%; 
+}
 
-  #main-container-c{ 
-    height:auto;
-  }
+#main-container-c{ 
+	height:auto;
+}
 
-  }
+}
   /* Minute Page CSS */
   .main-content {
     width: 70%;
@@ -438,6 +459,7 @@ div.header{
     width:100%;
     background: #EBFBFF;
     color:#264672;
+    padding-bottom: 6.5em;
   }
   #term-info{
     display: flex;
@@ -451,7 +473,7 @@ div.header{
   }
   .termcard{
     max-width:100%;
-    background:#1D1F20;
+    background:#110F43;
     margin:10px;
     color: #EBFBFF;
     text-align:center;
@@ -459,7 +481,7 @@ div.header{
   .expanded{
     color: #EBFBFF;
     max-width:100%;
-    background:#174CA1;
+    background:#0F326B;
   }
   .term-accordian{
     width:90%;
@@ -478,6 +500,7 @@ div.header{
 
 #carousel-main {
   margin-top: 2em;
+  padding-bottom: 4.5em;
 }
 
 #carousel-main .carousel-indicators {
@@ -529,6 +552,12 @@ tr:nth-child(even) {
 .carousel.main {
   font-family: 'Open Sans', sans-serif;
 }
+
+/* @media screen and (max-width: 600px) {
+  #daily-footer {
+    visibility: hidden;
+  }
+} */
 
 /* Spotify */
 
@@ -590,21 +619,20 @@ tr:nth-child(even) {
   width: 30px;
 }
 
-
-/* FOOTER */
-  .footer body{
+  /* FOOTER */
+  body{
     min-height: 100vh;
     position: relative;
   }
   .main-content{
-    padding-bottom: 6.5em;
+    padding-bottom: 4.5em;
   }
   .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 5.5rem;
-    background-color: #7C7BE0;
+    /* height: 3.5rem; */
+    background-color: #110F43;
     color: #EBFBFF;
   }
 
@@ -616,3 +644,32 @@ tr:nth-child(even) {
     margin-right: 10px;
     margin-left: 10px;
   }
+  
+  /* Contact us*/
+
+.contact-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+} 
+
+ input[type=submit] {
+  background-color: #4CAF50;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.container-contact {
+  border-radius: 5px;
+  padding: 20px;
+}
+  
+  

@@ -8,10 +8,10 @@ var my_secret_id = `933877f01d6c40009ddd4f766654babe`;
 var access_token;
 var refresh_token;
 var playlistData;
-var descr = "Sunny";
+var descr = "Rain";
 var temp = 12;
 var playlist;
-var playlist_id = "";
+var playlist_id = "37i9dQZF1DX1BzILRveYHb";
 
 $(function () { 
    
@@ -84,6 +84,10 @@ function code_to_token(){
 
 
 function recommend_playlist(){
+    descr = document.getElementById("sampleDesc").value
+    temp = document.getElementById("sampleTemp").value
+
+    // console.log(a, b);
     if (descr == "Sunny"){
         playlist = "Sunny Day";
     } else if (descr == "Rain" && temp > 10){
@@ -125,7 +129,7 @@ function request_playlist(){
         data : body,
         success: function(msg) {
             // $("#playlist-name").append("The result =" + (JSON.stringify(msg)));
-            console.log(JSON.stringify(msg));
+            // console.log(JSON.stringify(msg));
             playlistData = msg;
             // console.log("Playlist data = " + playlistData)
             set_playlist_data(playlistData);

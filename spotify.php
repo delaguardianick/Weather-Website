@@ -29,11 +29,15 @@
             <button class="btn btn-info" onclick="code_to_token()">Playlist for the weather</button> 
         </div>
     </div>
+    <br>
     <div id="sample-weather">
-        <br>
         <h6>Sample Weather: </h6>
-        <h5>Description: Sunny</h5>
-        <h5>Temp: 12 °C</h5>
+        <h5>Description:</h5>
+        <input type="text" placeholder="Sunny/Rain/Clouds" id="sampleDesc">
+        <br>
+        <h5>Temp:</h5>
+        <input type="text" placeholder="Temperature" id="sampleTemp">
+        
     </div>
     <div id="show-playlist">
 
