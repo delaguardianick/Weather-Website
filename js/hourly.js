@@ -37,6 +37,12 @@ $(function () {
  });
  
 
+//clears the search bar after user submits
+$("#city").change(function(){
+  searchCity();
+  $('#city').val('');
+});
+
 /*
 This function will run when a button is pressed to search for a city
 
@@ -48,10 +54,6 @@ Make sure text field (input) has a matching ID (ID="city") in this case
 	  <button onclick="searchCity()">Search</button>
 	  
 */
-$("#city").change(function(){
-  searchCity();
-  $('#city').val('');
-});
  function searchCity(){
 		
 		//Get the value in the text field
@@ -98,6 +100,7 @@ city - the name of the city e.g. 'toronto'
 			});
 	 
  }
+ //checks if the value is defined, if not, then it replaces the value with a "-" when displayed on the webpage
 function valueCheck(value){
   if (typeof value == "undefined"){
     return "-";
@@ -113,15 +116,18 @@ weatherData - the json weather data for the current city
 */	
 function setData(weatherData){
   console.log(weatherData);
-  var offset = weatherData.timezone_offset;
+	var offset = weatherData.timezone_offset;
+	//clears the table incase it is already filled with content
   $("tbody").empty();
 	$.each(weatherData.hourly,function(index,item){
+		//block of variable code converts UTC time recieved by the API to the proper timezone time
     var UnixTimeStamp = item.dt + offset;
     var milliseconds = UnixTimeStamp* 1000 ;
     var dateObject = new Date(milliseconds);
     var humanDateFormat = dateObject.toLocaleString();
     var windGust = valueCheck(item.wind_gust);
-    var windDeg= valueCheck(item.wind_deg);
+		var windDeg= valueCheck(item.wind_deg);
+		//appends new table rows containing weather information recieved for each hour
     $('#hourly-table tbody').append(`
         <tr class="hour-row">
           <td>`+dateObject.toLocaleString()+`</td>
