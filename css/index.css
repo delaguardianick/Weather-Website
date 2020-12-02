@@ -170,7 +170,7 @@ div.header{
   
 }
 #hourly-table th{
-  background:#1D1F20;
+  background:#110F43;
   color: #EBFBFF;
   border:#1D1F20 1px solid;
   padding:10px;
@@ -223,7 +223,7 @@ div.header{
   margin:15px;
 }
 #historical-header h1{
-  font-size: 4vw;
+  font-size: 3.5vw;
 }
 #sub-container2{
   display: flex;
