@@ -61,8 +61,8 @@ $(function () {
         window.MyChart = new Chart($ctx,
             {
                 "type":"line",
-                "responsive": true,
-                "maintainAspectRatio": true,
+                // "responsive": false,
+                "maintainAspectRatio": false,
                 "data":{
                     "labels":label,
                     "datasets":[{

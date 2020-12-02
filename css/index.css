@@ -436,8 +436,21 @@ div.header{
   #graph {
     margin-left: 5%;
     margin-right: 5%;
+    text-align: -webkit-center;
   }
-
+  #myChart, #Wrapper{
+    width: 1000px !important;
+    height: 600px !important;
+  }
+  @media screen and (max-width:600px) {
+    #graph{
+      overflow-x: scroll;
+    }
+    .graphMC{
+      margin: 0 !important;
+      width: 100% !important;
+    }
+  }
   .hidden {
     display: none !important;
   }
