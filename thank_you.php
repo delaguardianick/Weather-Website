@@ -23,25 +23,25 @@
 //get database stuff
 
 //Create connection
-//$mysqli = new mysqli("localhost","id15298472_cps530","cps530Password","id15298472_photos"); //change to match db
+$mysqli = new mysqli("localhost","id15298472_cps530","cps530Password","id15298472_photos"); //change to match db
 
 //Error check
-//if($mysqli -> connect_errno){
-//	echo "Failed to Connect: " . $mysqli -> connect_error;
-//	exit();
-//}
+if($mysqli -> connect_errno){
+	echo "Failed to Connect: " . $mysqli -> connect_error;
+	exit();
+}
 
 //SQL Query
-//$sql= "INSERT INTO feedback VALUES ($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['comments']);"; //Change to match db
+$sql= "INSERT INTO feedback VALUES (". $_POST['fname'] . "," . $_POST['lname'] . "," . $_POST['email'] . "," . $_POST['comments'] . ");"; //Change to match db
 
 //Check if there is a result
-/*if ($result = $mysqli->query($sql)){
+if ($result = $mysqli->query($sql)){
 	
 	//Print the result
 	print($result);
 	result->close();
 	
-}*/
+}
 
 ?>
 
