@@ -1,3 +1,35 @@
+<?php 
+
+
+$conn = mysqli_connect("localhost","id15298472_cps530","cps530Password","id15298472_photos");
+
+if(mysqli_connect_errno()){
+	echo 'Failed to connect' . mysqli_connect_errno() ;
+	
+}
+
+$fname = mysqli_real_escape_string($conn,$_POST['fname']);
+$lname = mysqli_real_escape_string($conn,$_POST['lname']);
+$email = mysqli_real_escape_string($conn,$_POST['email']);
+$comments = mysqli_real_escape_string($conn,$_POST['comments']);
+
+
+$query= "INSERT INTO feedback VALUES ('$fname', '$lname','$email','$comments');"; //Change to match db
+
+if(mysqli_query($conn,$query)){
+	echo "Feedback success";
+	
+}else{
+	echo 'Error:' . mysqli_error($conn);
+	
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -17,34 +49,6 @@
 	 <?php include 'template/navigation.php';?>
 	
 	
-
-<?php 
-
-//get database stuff
-
-//Create connection
-$mysqli = new mysqli("localhost","id15298472_cps530","cps530Password","id15298472_photos"); //change to match db
-
-//Error check
-if($mysqli -> connect_errno){
-	echo "Failed to Connect: " . $mysqli -> connect_error;
-	exit();
-}
-
-//SQL Query
-$sql= "INSERT INTO feedback VALUES (". $_POST['fname'] . "," . $_POST['lname'] . "," . $_POST['email'] . "," . $_POST['comments'] . ");"; //Change to match db
-
-//Check if there is a result
-if ($result = $mysqli->query($sql)){
-	
-	//Print the result
-	print($result);
-	result->close();
-	
-}
-
-?>
-
 
 
 <div >

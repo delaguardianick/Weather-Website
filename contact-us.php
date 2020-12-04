@@ -1,3 +1,27 @@
+<?php 
+
+
+$conn = mysqli_connect("localhost","id15298472_cps530","cps530Password","id15298472_photos");
+
+if(mysqli_connect_errno()){
+	echo 'Failed to connect' . mysqli_connect_errno() ;
+	
+}
+
+$query= "SELECT first_name, comment FROM feedback"; //Change to match db
+
+$result = mysqli_query($conn,$query);
+
+$posts= mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+?>
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -36,40 +60,14 @@
   </form>
 </div>
 
+<!-- Output database stuff -->
 <div>
-<?php 
-
-//get database stuff
-print "Test";
-//Create connection
+<?php foreach($posts as $post) : ?>
+	<p><?php echo $post['first_name'];?></p><br>
+	<p><?php echo $post['comments'];?></p><br>
 
 
-$mysqli = new mysqli("localhost","id15298472_cps530","cps530Password","id15298472_photos"); //change to match db
-
-//Error check
-if($mysqli -> connect_errno){
-	//echo "Failed to Connect: " . $mysqli -> connect_error;
-	
-	exit();
-}else{
-
-	//SQL Query
-	$sql= "SELECT first_name, comment FROM feedback"; //Change to match db
-
-	//Check if there is a result
-	$result = $mysqli->query($sql);
-	if ($result){
-		
-		//Print the result
-		
-		while($row = mysqli_fetch_row($result)){
-			printf("<p>%s</p><div><p>%s</p></div>", $row[0],$row[1]);
-			print("<br/>");
-		//}
-		$result -> close();
-	}
-}
-?>
+<?php endforeach; ?>
 </div>
 
 
