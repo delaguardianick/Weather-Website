@@ -1,22 +1,17 @@
 <?php 
 
 
-$conn = mysqli_connect("localhost","id15298472_cps530","cps530Password","id15298472_photos");
+$conn = mysqli_connect("localhost","id15298472_u_feedback","UserFeedback#12","id15298472_user_feedback");
 
 if(mysqli_connect_errno()){
 	echo 'Failed to connect' . mysqli_connect_errno() ;
 	
 }
 
-$query= "SELECT first_name, comment FROM feedback"; //Change to match db
+$query= "SELECT * FROM feedback"; //Change to match db
 
-$result = mysqli_query($conn,$query);
+$posts = mysqli_query($conn,$query);
 
-$posts= mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-mysqli_free_result($result);
-
-mysqli_close($conn);
 
 ?>
 
@@ -45,29 +40,43 @@ mysqli_close($conn);
 <div class="container-contact">
   <form action="thank_you.php" style="margin-bottom:80px;" method="post">
     <label for="fname">First Name</label>
-    <input class="contact-input" type="text" id="fname" name="fname" placeholder="Your name..">
+    <input class="contact-input" type="text" id="fname" name="fname" placeholder="Your name.." required>
 
     <label for="lname">Last Name</label>
-    <input class="contact-input" type="text" id="lname" name="lname" placeholder="Your last name..">
+    <input class="contact-input" type="text" id="lname" name="lname" placeholder="Your last name.." required>
 
     <label for="lname">E-mail</label>
-    <input class="contact-input" type="text" id="email" name="email" placeholder="Your email..">
+    <input class="contact-input" type="text" id="email" name="email" placeholder="Your email.." required>
 
     <label for="subject">Comments</label>
-    <textarea class="contact-input" id="comments" name="comments" placeholder="Comments.." style="height:200px"></textarea>
+    <textarea class="contact-input" id="comments" name="comments" placeholder="Comments.." style="height:200px" required></textarea>
 
-    <input type="submit" value="Submit">
+    <input id="contactbtn" type="submit" value="Submit">
   </form>
 </div>
 
 <!-- Output database stuff -->
-<div>
-<?php foreach($posts as $post) : ?>
-	<p><?php echo $post['first_name'];?></p><br>
-	<p><?php echo $post['comments'];?></p><br>
+<div id="feedbackbox">
+    <h1 id='ty-head'>Thanks for your feedback!</h1>
+    <table id="fbtable">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+<?php 
+foreach($posts as $post){
+    echo "<tr>";
+	echo "<td style='border:black 1px solid' class='feedback'>".$post['first_name']." ".$post['last_name']."</td>";
+	echo "<td class='feedback'>".$post['comments']."</td>";
+	echo "</tr>";
+}
 
-
-<?php endforeach; ?>
+?>
+        </tbody>
+    </table>
 </div>
 
 

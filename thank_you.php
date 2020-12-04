@@ -1,7 +1,7 @@
 <?php 
 
 
-$conn = mysqli_connect("localhost","id15298472_cps530","cps530Password","id15298472_photos");
+$conn = mysqli_connect("localhost","id15298472_u_feedback","UserFeedback#12","id15298472_user_feedback");
 
 if(mysqli_connect_errno()){
 	echo 'Failed to connect' . mysqli_connect_errno() ;
@@ -23,8 +23,6 @@ if(mysqli_query($conn,$query)){
 	echo 'Error:' . mysqli_error($conn);
 	
 }
-
-
 
 ?>
 
