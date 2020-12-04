@@ -19,23 +19,58 @@
 	
 
 <div class="container-contact">
-  <form action="/action_page.php" style="margin-bottom:80px;">
+  <form action="thank_you.php" style="margin-bottom:80px;" method="post">
     <label for="fname">First Name</label>
-    <input class="contact-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input class="contact-input" type="text" id="fname" name="fname" placeholder="Your name..">
 
     <label for="lname">Last Name</label>
-    <input class="contact-input" type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input class="contact-input" type="text" id="lname" name="lname" placeholder="Your last name..">
 
     <label for="lname">E-mail</label>
     <input class="contact-input" type="text" id="email" name="email" placeholder="Your email..">
 
-    <label for="subject">Subject</label>
-    <textarea class="contact-input" id="subject" name="subject" placeholder="Comments.." style="height:200px"></textarea>
+    <label for="subject">Comments</label>
+    <textarea class="contact-input" id="comments" name="comments" placeholder="Comments.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
   </form>
 </div>
 
+<div>
+<?php 
+
+//get database stuff
+print "Test";
+//Create connection
+
+
+$mysqli = new mysqli("localhost","id15298472_cps530","cps530Password","id15298472_photos"); //change to match db
+
+//Error check
+if($mysqli -> connect_errno){
+	//echo "Failed to Connect: " . $mysqli -> connect_error;
+	
+	exit();
+}else{
+
+	//SQL Query
+	$sql= "SELECT first_name, comment FROM feedback"; //Change to match db
+
+	//Check if there is a result
+	$result = $mysqli->query($sql);
+	if ($result){
+		
+		//Print the result
+		
+		while($row = mysqli_fetch_row($result)){
+			printf("<p>%s</p><div><p>%s</p></div>", $row[0],$row[1]);
+			print("<br/>");
+		//}
+		$result -> close();
+	}
+}
+?>
+</div>
 
 
 
