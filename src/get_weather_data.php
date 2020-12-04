@@ -1,17 +1,20 @@
 <?php
 $apiKey = "1433deb5fada830d0ffb2d9f6862d0aa";
+//checks if city variable is set from a form submission, if not, use default city Toronto
 if(isset($_GET['city'])){
     $cityName = $_GET['city'];
 }else{
     $cityName = 'toronto';
 }
-
+//checks if time variable is set from a form submission
 if(isset($_GET['time'])){
     $dt = $_GET['time'];
 }
 
+//Preset of API URL for the Current API
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey;
 
+//calls data from the API and turns it into a JSON format
 function callData($url) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -31,13 +34,13 @@ $data = callData($googleApiUrl);
 //Get longitude and Latitude
 $lonValue = $data->coord->lon;
 $latValue = $data->coord->lat; 
-
+//an array containing the url for each individual API
 $urls = array('oneCall' => 'https://api.openweathermap.org/data/2.5/onecall?lat='. $latValue .'&lon=' . $lonValue . '&appid=1433deb5fada830d0ffb2d9f6862d0aa&units=metric',
             'current' => "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey,
             'historical' => "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=". $latValue . "&lon=" . $lonValue . "&dt=" . $dt . "&appid=" . $apiKey . "&units=metric",
             'fiveDay' => "https://api.openweathermap.org/data/2.5/forecast?q=" . $cityName . "&appid=" . $apiKey
 );
-
+//checks if variable type is set, then gets a JSON format of the information based on the value of type
 if(isset($_GET['type'])){
     $u = callData($urls[$_GET['type']]);
     echo json_encode($u);

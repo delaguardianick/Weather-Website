@@ -1,6 +1,6 @@
 
 //The type of API call you want e.g. 'oneCall' , 'current' ect
-var APICallType ='oneCall';
+var APICallType ='current';
 
 //Default city if no city has been searched
 var defaultCity ='Toronto';
@@ -37,12 +37,6 @@ $(function () {
  });
  
 
-//clears the search bar after user submits
-$("#city").change(function(){
-  searchCity();
-  $('#city').val('');
-});
-
 /*
 This function will run when a button is pressed to search for a city
 
@@ -65,8 +59,9 @@ Make sure text field (input) has a matching ID (ID="city") in this case
 		//If the button is clicked and the input is blank
 		}else{
 			alert("Please enter a city");
-    }	
+		}			
 	}
+	
 
 
 /*
@@ -80,15 +75,14 @@ city - the name of the city e.g. 'toronto'
 	//jQuery to get json data
 	 $.get(url + '?type='+type+'&city='+city, function(data, status){
 			
-      //Parse data so it is readable 
-      
+			//Parse data so it is readable 
 			var weatherData = JSON.parse(data);
 			
 			//Check internal codes for errors. 404=invalid city    400=undefined
 			if(weatherData.cod!="404" && weatherData.cod!="400"){
 				
 				//Save the current city name in a session variable
-				sessionStorage.setItem("currCity", city);
+				sessionStorage.setItem("currCity", weatherData.name);
 				//Set the inner html
 				setData(weatherData);
 			}
@@ -100,13 +94,7 @@ city - the name of the city e.g. 'toronto'
 			});
 	 
  }
- //checks if the value is defined, if not, then it replaces the value with a "-" when displayed on the webpage
-function valueCheck(value){
-  if (typeof value == "undefined"){
-    return "-";
-  }
-  return value;
-}
+
 
 /*
 This function will set the html of your page
@@ -115,38 +103,23 @@ weatherData - the json weather data for the current city
 
 */	
 function setData(weatherData){
-  console.log(weatherData);
-	var offset = weatherData.timezone_offset;
-	//clears the table incase it is already filled with content
-  $("tbody").empty();
-	$.each(weatherData.hourly,function(index,item){
-		//block of variable code converts UTC time recieved by the API to the proper timezone time
-    var UnixTimeStamp = item.dt + offset;
-    var milliseconds = UnixTimeStamp* 1000 ;
-    var dateObject = new Date(milliseconds);
-    var humanDateFormat = dateObject.toLocaleString();
-    var windGust = valueCheck(item.wind_gust);
-		var windDeg= valueCheck(item.wind_deg);
-		//appends new table rows containing weather information recieved for each hour
-    $('#hourly-table tbody').append(`
-        <tr class="hour-row">
-          <td>`+dateObject.toLocaleString()+`</td>
-          <td><img src="http://openweathermap.org/img/w/`+item.weather[0].icon+`.png"/></td>
-          <td>`+item.temp+`</td>
-          <td>`+item.feels_like+`</td>
-          <td>`+item.weather[0].description+`</td>
-          <td>`+item.pop+`</td>
-          <td>`+item.wind_speed+`</td>
-          <td>`+windGust+`</td>
-          <td>`+windDeg+`</td>
-          <td>`+item.clouds+`</td>
-          <td>`+item.visibility+`</td>
-          <td>`+item.pressure+`</td>
-          <td>`+item.humidity+`</td>
-        <tr>
-    `)
-  })
-
+	
+	//Example code
+	
+	//Get the tag with ID = temp
+	var temp=document.getElementById("temp");
+	//Get the value of the temperature from weatherData 
+	var tempValue = weatherData.main.temp;
+	
+	//set html
+	temp.innerHTML = "Temp: "+tempValue+"°C";
+	
+	
+	
+	//OR it can be done all in 1 line also
+	document.getElementById("temp").innerHTML = "Temp: "+weatherData.main.temp+"°C";
+	
+	
 	
 
 }

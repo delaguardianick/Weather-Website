@@ -25,7 +25,7 @@
             </div>
             <div class="about-message text-justify">
                 <p class="abt-box m-4">
-                    This project is made for CPS 530. It was inspired by ambiguous Canadian Weather and in order to help
+                    This page was inspired by ambiguous Canadian Weather and in order to help
                     users survive, this website was made to offer wide range of functionalities.
                 </p>
                 <p class="abt-box m-4">

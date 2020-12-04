@@ -35,17 +35,12 @@ $(function () {
     });
 
  });
- //empties the container so we can append new data
+ 
 function containerEmpty(){
 	$("#day-container").empty();
 	count = 1;
 }
 
-// clears the search bar after user submits
-$("#city").change(function(){
-  searchCity();
-  $('#city').val('');
-});
 /*
 This function will run when a button is pressed to search for a city
 
@@ -57,12 +52,14 @@ Make sure text field (input) has a matching ID (ID="city") in this case
 	  <button onclick="searchCity()">Search</button>
 	  
 */
-
+$("#city").change(function(){
+  searchCity();
+  $('#city').val('');
+});
  function searchCity(){
-
-		//empties container incase there is already content inside
-		containerEmpty();
+		
 		//Get the value in the text field
+		containerEmpty();
 		var city = document.getElementById('city').value;	
 		//If the text is not empty
 		if(city!=""){
@@ -106,7 +103,7 @@ city - the name of the city e.g. 'toronto'
 			});
 	 
  }
-// Sorts all of the div components by date in descending order
+
 function sortDiv(){
 	console.log("here");
 	$('#day-container .historical-standard').sort(function(a, b) {
@@ -114,15 +111,9 @@ function sortDiv(){
   }).appendTo('#day-container');
 
 }
-/*
-This function will get the json file from php and also call the function to set the inner html of the page
-@param
-type - the type of api call needed e.g. 'current' 'oneCall' ect
-city - the name of the city e.g. 'toronto'
-*/
+
 function getDataHistorical(type,city,dt){
-	var day = 3600 * 24;
-	// repeats 5 different times so that it can call the OPENweather API for all 5 days
+  var day = 3600 * 24;
   for (i = 1; i <= 5; i++){
     $.get(url + '?type='+type+'&city='+city+'&time='+dt, function(data, status){
 			
@@ -147,7 +138,6 @@ function getDataHistorical(type,city,dt){
 	}
 	
 }
-//Checks if the value is defined, if not then it will use "-" as a placeholder on the webpage
 function valueCheck(value){
   if (typeof value == "undefined"){
     return "-";
@@ -166,44 +156,30 @@ weatherData - the json weather data for the current city
 function setData(weatherData){
 	console.log(weatherData);
 	console.log(count);
-	//block of variable code converts UTC time recieved by the API to the proper timezone time
 	var offset = weatherData.timezone_offset;
 	var item =weatherData.current;
 	var UnixTimeStamp = item.dt + offset;
 	var milliseconds = UnixTimeStamp* 1000 ;
 	var dateObject = new Date(milliseconds);
 	var humanDateFormat = dateObject.toLocaleString();
-	humanDateFormat = humanDateFormat.split(" ");
-	console.log(humanDateFormat);
-	//appends the information gathered to the day-container
 	$('#day-container').append(`
 		<div class="historical-standard" data-day="`+dateObject.toLocaleString("en-US", {day: "numeric"})+`">
-				<p class="date-heading">`+humanDateFormat[0]+`</p>
-				<p class="date-heading">`+humanDateFormat[1]+` `+humanDateFormat[2]+`</p>
+				<p class="date-heading">`+humanDateFormat+`</p>
 				<img class="iconimg" src="http://openweathermap.org/img/wn/`+item.weather[0].icon+`.png"/>
-				<p class="historical-info"><b>Temp:</b></p>
-				<p class="historical-info">`+valueCheck(item.temp)+`</p>
-				<p class="historical-info"><b>Feels Like:</b></p>
-				<p class="historical-info">`+valueCheck(item.feels_like)+`</p>
+				<p class="historical-info"><b>Temp:</b> `+valueCheck(item.temp)+`</p>
+				<p class="historical-info"><b>Feels Like:</b> `+valueCheck(item.feels_like)+`</p>
 				<p class="historical-info"><button class="btn btn-primary collapsebtn" data-toggle="collapse" onClick="MoreInfoToggle()" href="#o" data-target="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button></p>
 				<div class="collapse MoreInfo" id="collapseExample">
 					<div class="card card-body ">
 						<p class="historical-info"><b>Description:</b></p>
 						<p class="historical-info">`+valueCheck(item.weather[0].description)+`</p>
-						<p class="historical-info"><b>Pressure:</b></p>
-						<p class="historical-info">`+valueCheck(item.pressure)+`</p>
-						<p class="historical-info"><b>Humidity:</b></p>
-						<p class="historical-info">`+valueCheck(item.humidity)+`</p>
-						<p class="historical-info"><b>Visibility:</b></p>
-						<p class="historical-info">`+valueCheck(item.visibility)+`</p>
-						<p class="historical-info"><b>UV:</b></p>
-						<p class="historical-info">`+valueCheck(item.uvi)+`</p>
-						<p class="historical-info"><b>Wind Speed:</b></p>
-						<p class="historical-info">`+valueCheck(item.wind_speed)+`</p>
-						<p class="historical-info"><b>Wind Gust:</b></p>
-						<p class="historical-info">`+valueCheck(item.wind_gust)+`</p>
-						<p class="historical-info"><b>Wind Degree:</b></p>
-						<p class="historical-info">`+valueCheck(item.wind_deg)+`</p>
+						<p class="historical-info"><b>Pressure:</b> `+valueCheck(item.pressure)+`</p>
+						<p class="historical-info"><b>Humidity:</b> `+valueCheck(item.humidity)+`</p>
+						<p class="historical-info"><b>Visibility:</b> `+valueCheck(item.visibility)+`</p>
+						<p class="historical-info"><b>UV:</b> `+valueCheck(item.uvi)+`</p>
+						<p class="historical-info"><b>Wind Speed:</b> `+valueCheck(item.wind_speed)+`</p>
+						<p class="historical-info"><b>Wind Gust:</b> `+valueCheck(item.wind_gust)+`</p>
+						<p class="historical-info"><b>Wind Degree:</b> `+valueCheck(item.wind_deg)+`</p>
 					</div>
 				</div>
 			</div>

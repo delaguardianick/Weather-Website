@@ -27,6 +27,7 @@
         <script src="" async defer></script>
         <script src="js/historica.js"></script>
         <script>
+        //toggles button text when user collapses and expands the container
             function MoreInfoToggle() {
                 var x=document.getElementsByClassName('collapsebtn');
                 for(var i = 0; i < x.length; i++){
