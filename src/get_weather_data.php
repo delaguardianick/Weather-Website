@@ -10,6 +10,9 @@ if(isset($_GET['city'])){
 if(isset($_GET['time'])){
     $dt = $_GET['time'];
 }
+else{
+    $dt="";
+}
 
 //Preset of API URL for the Current API
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&lang=en&units=metric&APPID=" . $apiKey;

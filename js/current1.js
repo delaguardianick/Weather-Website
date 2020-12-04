@@ -79,6 +79,7 @@ city - the name of the city e.g. 'toronto'
 	 $.get(url + '?type='+type+'&city='+city, function(data, status){
 			
 			//Parse data so it is readable 
+			console.log(data);
 			var weatherData = JSON.parse(data);
 			//console.log("CITY: "+city);
 			//Check internal codes for errors. 404=invalid city    400=undefined

@@ -1,3 +1,22 @@
+<?php 
+
+
+$conn = mysqli_connect("localhost","id15298472_u_feedback","UserFeedback#12","id15298472_user_feedback");
+
+if(mysqli_connect_errno()){
+	echo 'Failed to connect' . mysqli_connect_errno() ;
+	
+}
+
+$query= "SELECT * FROM feedback"; //Change to match db
+
+$posts = mysqli_query($conn,$query);
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -16,31 +35,54 @@
     <body>
 	 <?php include 'template/navigation.php';?>
 	
-	
+        <div id="contact-box">
+            <h1 id='ty-head'>Give Us Some Feedback!</h1>
+            <div class="container-contact">
+            <form action="thank_you.php" style="margin-bottom:80px;" method="post">
+                <label for="fname">First Name</label>
+                <input class="contact-input" type="text" id="fname" name="fname" placeholder="Your name.." required>
 
-<div class="container-contact">
-  <form action="/action_page.php" style="margin-bottom:80px;">
-    <label for="fname">First Name</label>
-    <input class="contact-input" type="text" id="fname" name="firstname" placeholder="Your name..">
+                <label for="lname">Last Name</label>
+                <input class="contact-input" type="text" id="lname" name="lname" placeholder="Your last name.." required>
 
-    <label for="lname">Last Name</label>
-    <input class="contact-input" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="email">E-mail</label>
+                <input class="contact-input" type="text" id="email" name="email" placeholder="Your email..">
 
-    <label for="lname">E-mail</label>
-    <input class="contact-input" type="text" id="email" name="email" placeholder="Your email..">
+                <label for="subject">Comments</label>
+                <textarea class="contact-input" id="comments" name="comments" placeholder="Comments.." style="height:200px" required></textarea>
 
-    <label for="subject">Subject</label>
-    <textarea class="contact-input" id="subject" name="subject" placeholder="Comments.." style="height:200px"></textarea>
+                <input id="contactbtn" type="submit" value="Submit">
+            </form>
+            </div>
 
-    <input type="submit" value="Submit">
-  </form>
-</div>
+            <!-- Output database stuff -->
+            <div id="feedbackbox">
+                <h1 id='ty-head'>Thanks for your feedback!</h1>
+                <table id="fbtable">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        foreach($posts as $post){
+                            echo "<tr>";
+                            echo "<td style='border:black 1px solid' class='feedback'>".$post['first_name']." ".$post['last_name']."</td>";
+                            echo "<td class='feedback'>".$post['comments']."</td>";
+                            echo "</tr>";
+                        }
+
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
-
-
-     
+        <?php include 'template/footer.php';?>	
         <script src="js/redirect.js" async defer></script>
- 		<?php include 'template/footer.php';?>	 
+ 		 
     </body>
 </html>

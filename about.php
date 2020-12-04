@@ -21,22 +21,14 @@
         <script src="" async defer></script>
         <div class="main-content mt-4">
             <div class="header text-center">
-                <h2>About Us</h2>
+                <h2 id = "about-head">About Us</h2>
             </div>
             <div class="about-message text-justify">
                 <p class="abt-box m-4">
-                    This page was inspired by ambiguous Canadian Weather and in order to help
-                    users survive, this website was made to offer wide range of functionalities.
+                    ClosedWeather is a weather application that is built for not only daily use, but also to give you a unique user experience compared to other weather applications. This is accomplished by our special weather features such as our Playlist page where you can get a special spotify playlist based on the weather condition. A comparison page where you can compare weather conditions in different cities. And lastly a terminology page where you can educate yourself on important weather terminology.
                 </p>
                 <p class="abt-box m-4">
-                    On the website there are two initial sections; Forecast and Info. Forecast contains Current, Minutely, 
-                    Hourly, Daily and Historical which offers wide range of graphs and textual information. Second one is Info 
-                    contains About Us, Terminology, and Contact Us, all of which are informative pages. 
-                </p>
-                <p class="abt-box m-4">
-                    Next section includes Alerts pages which collects alerts provided by Government then alerts are shown in card format. 
-                    Moreover, another page is Playlist which utilizes Spotify API to give users playlist depending on weather. Lastly, 
-                    City Comparison page is provided where User can watch summarized weather information of multiple cities side by side.
+                    To keep things fresh, we displayed the information in various methods such as a graph, table, etc. We pride ourselves on satisfying our users, so if you have any feedback or comments, please send us some on the Contact Us page!
                 </p>
             </div>
         </div>

@@ -33,10 +33,9 @@
 		
 		<div class="card">
 
-			<div class="form-inline" method="post">
+			<div class="cbar-div form-inline" method="post">
 				  
-				  <input class="inline form-control" type="text" id="city1" name="city1" placeholder="Search for a city" >
-				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('1')"><i class="fa fa-search"></i></button>
+				  <input class="comparebar inline form-control" type="text" id="city1" name="city1" placeholder="Search for a city" >
 
 			</div>
 
@@ -61,10 +60,9 @@
 				<!--City 2 card-->
 		<div class="card ">
 
-			<div class="form-inline" method="post">
+			<div class="cbar-div form-inline" method="post">
 				  
-				  <input class="inline form-control" type="text" id="city2" name="city2" placeholder="Search for a city" >
-				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('2')"><i class="fa fa-search"></i></button>
+				  <input class="comparebar inline form-control" type="text" id="city2" name="city2" placeholder="Search for a city" >
 
 			</div>
 
@@ -88,11 +86,8 @@
 						<!--City 3 card-->
 		<div class="card ">
 
-			<div class="form-inline" method="post">
-				  
-				  <input class="inline form-control" type="text" id="city3" name="city3" placeholder="Search for a city" >
-				  <button class="btn search-btn btn-primary my-2 my-sm-0" onclick="searchCity('3')"><i class="fa fa-search"></i></button>
-
+			<div class="cbar-div form-inline" method="post">
+				  <input class="comparebar inline form-control" type="text" id="city3" name="city3" placeholder="Search for a city" >
 			</div>
 
 			<div class ="card-body">
