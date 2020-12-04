@@ -404,7 +404,7 @@ div.header{
 
 
 
-@media screen and (max-width:900px){
+@media screen and (max-width:995px){
 .card-main-comp {
 	display:flex;
 	flex-direction: column;
