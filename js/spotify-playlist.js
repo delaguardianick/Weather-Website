@@ -114,7 +114,7 @@ function setData(weatherData){
 
     document.getElementById("sampleCity").innerHTML = nameValue
     // document.getElementById("currentTime").innerHTML = time
-    document.getElementById("sampleTemp").innerHTML = tempValue + "°C"
+    document.getElementById("sampleTemp").innerHTML = tempValue
     document.getElementById("sampleDesc").innerHTML = descriptionValue
     document.getElementById("w-icon").src = "http://openweathermap.org/img/w/" + iconValue + ".png"
     

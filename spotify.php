@@ -30,7 +30,7 @@
                         <img class="card-img-right flex-auto d-none d-md-block" id="w-icon" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: auto" src="" data-holder-rendered="true">
                         <ul class="card-text mb-auto" id="weather-list">
                             <li>Description: <h4 id="sampleDesc"></h4></li>
-                            <li>Temperature: <h4 id="sampleTemp"></h4></li>
+                            <li>Temperature °C:<h4 id="sampleTemp"></h4></li>
                         </ul>
                     </div>
                 </div>
