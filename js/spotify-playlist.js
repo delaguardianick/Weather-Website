@@ -181,19 +181,32 @@ function recommend_playlist(){
     descr = document.getElementById("sampleDesc").innerHTML
 
     // console.log(a, b);
-    if (descr == "Sunny"){
+    if (descr == "Clear" && temp > 10 ){
         playlist = "Sunny Day";
-    } else if (descr == "Rain" && temp > 10){
-        playlist = "Rainy Day Jazz";
-    } else if (descr == "Clouds"){
+    }else if (descr == "Clear" && temp < 10 ){
+        playlist = "Sunny Beats";
+
+    } else if (descr == "Clouds" && temp > 10){
         playlist = "Cloudy Days";
-    } else if (descr == "Rain" && temp < 10) {
+    } else if (descr == "Clouds" && temp < 10){
+        playlist = "cloudy morning hot coffee";
+
+
+    } else if (descr == "Rain" && temp > 10){
+        playlist = "Rainy Day Mood";
+    } else if (descr == "Rain" && temp < 10){
+        playlist = "Rainy Day Jazz";
+    
+    } else if (descr == "Snow") {
         playlist = "cold days cold nights";
     }
 
     (playlist == "Sunny Day" ? playlist_id = '37i9dQZF1DX1BzILRveYHb' : '');
-    (playlist == "Rainy Day Jazz" ? playlist_id = '37i9dQZF1DWYxwmBaMqxsl' : '');
+    (playlist == "Sunny Beats" ? playlist_id = '37i9dQZF1DXbtuVQL4zoey' : '');
     (playlist == "Cloudy Days" ? playlist_id = '3oh3NmpgHy2leLcu7oobAr' : '');
+    (playlist == "cloudy morning hot coffee" ? playlist_id = '0X74gttREY0B12WpiDiW7k' : '');
+    (playlist == "Rainy Day Mood" ? playlist_id = '3r82Jvzw3SSGKKiKf3dXMM' : '');
+    (playlist == "Rainy Day Jazz" ? playlist_id = '37i9dQZF1DWYxwmBaMqxsl' : '');
     (playlist == "cold days cold nights" ? playlist_id = '00p7Hl47ZoodxWVuFjDpEE' : '');    
     console.log("playlist_id =" + playlist_id)
     get_playlist_id();
