@@ -13,4 +13,5 @@ Home Page: https://cps530arbenson.000webhostapp.com
 'Daily Weather' Page: https://cps530arbenson.000webhostapp.com/daily.php
 
 'Playlist Recommendation' Page: (requires spotify account) https://cps530arbenson.000webhostapp.com/spotify.php
-  - The playlist is recommended according to the weather and description (sunny, rainy...). Since the goal was functionality, the playlists are selected for demo purposes.
+  - The playlist is recommended according to the temperature and description (sunny, rainy...). Since the goal was functionality, the playlists are selected for demo purposes,
+  and not much thought went into them.
