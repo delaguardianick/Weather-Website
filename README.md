@@ -1,4 +1,4 @@
-#Recommends a Spotify playlist according to the weather
+# Recommends a Spotify playlist according to the weather
 
 THE WORKING VERSION IS IN THE 'NICK' BRANCH
 
