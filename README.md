@@ -1,6 +1,6 @@
 # Recommends a Spotify playlist according to the weather
 
-##### This website uses the OpenWeatherAPI to fetch the weather and display it in multiple ways. This was the final group project for CPS 530. I was personally in charge of displaying the info for the 'daily' and 'playlist' tabs. The playlist tab adds a twist to the website, using the Spotify API to recommend playlists for users according to searched weather. The pages are responsive too
+This website uses the OpenWeatherAPI to fetch the weather and display it in multiple ways. This was the final group project for CPS 530. I was in charge of creating the 'daily' and 'playlist' tabs for the website. The playlist tab adds a twist to the website, using the Spotify API to recommend playlists for users according to searched weather. The pages are responsive too
 
 All API calls are made in the front-end using AJAX - since using an API wasn't a requirement of the project, we had to self-learn calls and didn't know better. If I were to do it again I'd use node.js. I might update that and some other functionality in the future.
 
