@@ -11,6 +11,9 @@ Since this was for a private project, the URL hasn't been formatted for public d
 Home Page: https://cps530arbenson.000webhostapp.com
 
 'Daily Weather' Page: https://cps530arbenson.000webhostapp.com/daily.php
+Displays a carrousel which shows the weather for each day of the week
+![image](https://user-images.githubusercontent.com/52568848/118532422-f6a26980-b714-11eb-9772-a884354831f7.png)
+
 
 'Playlist Recommendation' Page: (requires spotify account) https://cps530arbenson.000webhostapp.com/spotify.php
   - The playlist is recommended according to the temperature and description (sunny, rainy...). Since the goal was functionality, the playlist recommendations are selected for demo purposes and can be significantly improved.
