@@ -17,3 +17,5 @@ Displays a carrousel which shows the weather for each day of the week
 
 'Playlist Recommendation' Page: (requires spotify account) https://cps530arbenson.000webhostapp.com/spotify.php
   - The playlist is recommended according to the temperature and description (sunny, rainy...). Since the goal was functionality, the playlist recommendations are selected for demo purposes and can be significantly improved.
+  - ![image](https://user-images.githubusercontent.com/52568848/118532642-32d5ca00-b715-11eb-9dad-33bc28d1719e.png)
+
